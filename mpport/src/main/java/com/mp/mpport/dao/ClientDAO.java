@@ -26,4 +26,8 @@ public class ClientDAO {
 			return false;
 		}
 	}
+
+	public Client getClientBySlug(String clientSlug) {
+		return (Client) sessionFactory.getCurrentSession().createCriteria(Client.class).add(Restrictions.eq("slug", clientSlug)).uniqueResult();
+	}
 }

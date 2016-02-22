@@ -27,6 +27,9 @@ public class Client {
 	@Column(name = "api_location")
 	private String  apiLocation;
 	
+	@Column(name = "slug")
+	private String  slug;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "client")
 	private List<ClientKey> keyList;
@@ -62,6 +65,15 @@ public class Client {
 	public void setKeyList(List<ClientKey> keyList) {
 		this.keyList = keyList;
 	}
+
+	public String getSlug() {
+		return slug;
+	}
+
+	public void setSlug(String slug) {
+		this.slug = slug;
+	}
+
 	
 	
 }

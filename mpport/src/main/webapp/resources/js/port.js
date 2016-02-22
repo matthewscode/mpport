@@ -1,25 +1,17 @@
-var ttApp = angular.module('portApp', []);
+var portApp = angular.module('portApp', []);
 
 
 portApp.controller('portController', ['$scope', '$http', function($scope, $http) {
 	
-	$scope.init = function(url, options) {
+	$scope.init = function(url) {
 		if(!url) {
 			return;
 		}
 		$scope.dataUrl = url;
 		
-		$scope.options = options || {};
-		$scope.options.start = $scope.options.start || 0;
-		$scope.options.amount = $scope.options.amount || 50;
-		
 		$http.get(url)
 			.success(function(data, status, headers, config) {
-				$scope.data = processData(data);
-				$scope.nextStart = 25;
-				if($scope.options.callback && typeof $scope.options.callback === 'function') {
-					$scope.options.callback.apply(null, [$scope.data]);
-				}
+				$scope.data = data;
 		    })
 		    .error(function(data, status, headers, config) {
 		    	$scope.data = {error: true};

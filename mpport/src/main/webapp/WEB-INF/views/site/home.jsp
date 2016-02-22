@@ -12,10 +12,17 @@
 
 </head>
 <body data-ng-app="portApp">
-
-<div data-ng-controller="portController" data-ng-init="init('<c:url value="/api/client/all" />')" class="ft-container">
-		you have access to:
-</div>
-
+	<div data-ng-controller="portController" data-ng-init="init('<c:url value="/api/client/all" />')">
+			<div class="homeWrapper">
+				<div class="port-client-box" data-ng-repeat="entry in data">
+				<a href="<c:url value="/transcribe/"/>{{ entry.slug }}">
+					<img src="<c:url value="/resources/images/logos/" />{{ entry.slug }}.png" class="port-client-image">
+				</a>
+					{{ entry.clientName }}		
+					
+					</div>
+				</div>
+			</div>
+	</div>
 </body>
 </html>

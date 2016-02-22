@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mp.mpport.dao.ClientDAO;
 import com.mp.mpport.dao.UserDAO;
 import com.mp.mpport.domain.Client;
 import com.mp.mpport.domain.ClientKey;
@@ -21,6 +22,8 @@ public class HomeService {
 	
 	@Autowired
 	private UserDAO userDao;
+	@Autowired
+	private ClientDAO clientDao;
 	
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
 	public List<Client> getUserClientList(){
@@ -33,5 +36,27 @@ public class HomeService {
 			clientList.add(ck.getClient());
 		}
 		return clientList;
+	}
+
+	@Transactional
+	public Client getClientBySlug(String clientSlug) {
+		return clientDao.getClientBySlug(clientSlug);
+	}
+
+	@Transactional
+	public User getUserByUsername() {
+		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		return userDao.findByUserName(userDetails.getUsername());
+	}
+
+	public ClientKey getUserKey(Client currentClient) {
+		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		User user = userDao.findByUserName(userDetails.getUsername());
+		for(ClientKey ck : user.getKeyList()){
+			if(ck.getClient().getId() == currentClient.getId()){
+				return ck;
+			}
+		}
+		return null;
 	}
 }
