@@ -19,8 +19,6 @@
 					<img src="<c:url value="/resources/images/logos/" />{{ entry.slug }}.png" class="port-client-image">
 				</a>
 					{{ entry.clientName }}		
-					
-					</div>
 				</div>
 			</div>
 	</div>

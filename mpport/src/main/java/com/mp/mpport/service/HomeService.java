@@ -40,7 +40,8 @@ public class HomeService {
 
 	@Transactional
 	public Client getClientBySlug(String clientSlug) {
-		return clientDao.getClientBySlug(clientSlug);
+		Client client = clientDao.getClientBySlug(clientSlug);
+		return client;
 	}
 
 	@Transactional

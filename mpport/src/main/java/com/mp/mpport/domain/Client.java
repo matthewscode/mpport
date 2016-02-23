@@ -1,19 +1,18 @@
 package com.mp.mpport.domain;
 
-import java.util.List;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "Client")
+@Table(name = "client")
 public class Client {
 
 	@Id
@@ -25,14 +24,10 @@ public class Client {
 	private String clientName;
 	
 	@Column(name = "api_location")
-	private String  apiLocation;
+	private String apiLocation;
 	
 	@Column(name = "slug")
-	private String  slug;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "client")
-	private List<ClientKey> keyList;
+	private String slug;
 
 	public int getId() {
 		return id;
@@ -56,14 +51,6 @@ public class Client {
 
 	public void setApiLocation(String apiLocation) {
 		this.apiLocation = apiLocation;
-	}
-
-	public List<ClientKey> getKeyList() {
-		return keyList;
-	}
-
-	public void setKeyList(List<ClientKey> keyList) {
-		this.keyList = keyList;
 	}
 
 	public String getSlug() {
