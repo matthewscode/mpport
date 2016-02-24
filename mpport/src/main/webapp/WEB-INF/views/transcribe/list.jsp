@@ -59,7 +59,7 @@
 			<div class="ft-button-wrapper">
 				<div class="ft-glossary-box">GLOSSARY</div>
 				<div class="ft-pad"></div>
-				<button  type="button" class="ts-button" ng-click="submitTranscription('<c:url value="${apiLocation}/api/transcription/create/" />', transcriptionId, transcriptionText, checksumId)">TRANSCRIPTION <font color="#b2c9de">EN</font></button>
+				<button type="button" class="ts-button" ng-click="submitTranscription('<c:url value="${apiLocation}/api/transcription/create/" />', transcriptionId, transcriptionText, checksumId)">TRANSCRIPTION <font color="#b2c9de">EN</font></button>
 				<div class="ft-pad"></div>
 				<div class="ft-word-count-box">{{ transcriptionWordCount }} w</div>
 			</div>
