@@ -23,7 +23,7 @@
 <div class="ft-wrapper">
 <div class="ft-top-nav">
 	<div class="ft-top-logo"></div>
-	<div class="title">WORKBENCH</div>
+	<div class="title"><a href="<c:url value="/" />">WORKBENCH</a></div>
 </div>
 
 <div data-ng-controller="ApiController" data-ng-init="init('${apiLocation}/api/ft/all')" class="ft-container">
