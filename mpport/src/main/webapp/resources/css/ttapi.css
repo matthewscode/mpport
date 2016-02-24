@@ -262,7 +262,7 @@ body {
 	text-align: center;
 }
 .ft-work-image {
-	max-width: auto;
+	max-width: 100%;
 	max-height: 37.00vh;
 }
 .ft-work-editors {

@@ -7,31 +7,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login MP:Workbench</title>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css" />">
 </head>
 <body>
 <c:url value="/login" var="loginUrl" />
-<form name="loginForm"
-		  action="<c:url value="j_spring_security_check" />" method="POST">
+<div class="login-bg" style="background: url(<c:url value="/resources/images/login-1.jpg" />)no-repeat center center fixed;">
 
-		  <table>
+</div>
+<div class="login-wrapper">
+	<div class="login-filler"></div>
+	<div class="form-box">
+		<form name="loginForm" action="<c:url value="j_spring_security_check" />" method="POST">
+		<table cellspacing="0" cellpadding="0">
 			<tr>
-				<td>User:</td>
-				<td><input type='text' name='username' value=''></td>
+			<td>
+			<table cellspacing="0" cellpadding="0">
+			<tr><td>
+			<input class="text-box" type='text' name='username' placeholder="username"></td>
 			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type='password' name='password' /></td>
+			<tr><td>
+			<input class="text-box" type='password' name='password' placeholder="password"/>
+			</td></tr>
+			</table>
+			<td>
+			<button type="submit" class="login-button"></button>
+			</td>
 			</tr>
-			<tr>
-				<td colspan='2'><input name="submit" type="submit"
-					value="submit" /></td>
-			</tr>
-		  </table>
-
-		  <input type="hidden" name="${_csrf.parameterName}"
-			value="${_csrf.token}" />
-
+		</table>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			
 		</form>
-
+	</div>
+	<div class="login-filler"></div>
+	
+</div>
 </body>
 </html>

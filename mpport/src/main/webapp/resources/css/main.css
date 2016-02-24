@@ -1,12 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-
+/* light blue: #0099e0 */
 * {
 	box-sizing: border-box !important;
 }
 
 body {
-    background-color: #f8f8f8;
+    background-color: #333;
     margin: 0px;
     font-family: 'Roboto', sans-serif;
 }
@@ -31,5 +31,62 @@ body {
 .port-client-image{
 	max-width: 100%;
 }
+
+.login-bg{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 0;
+	margin: 0;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.8;
+}
+.login-wrapper{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 5;
+}
+.login-filler{
+	height: 45.00vh;
+}
+.form-box{
+	box-sizing: content-box;
+	margin: 0 auto;
+	width: 12%;
+	padding: 2px;
+	text-align: center;
+	height: 10.00vh;
+}
+.login-button{
+	border: 1px solid #f8f8f8;
+	border: 0px;
+	height: 60px;
+	width: 60px;
+	background: #f8f8f8;
+	color: #333;
+	background-image: url(mp-login-button.png);
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.login-button:hover{
+	background: #f1f1f1;
+	background-image: url(mp-login-button.png);
+    background-repeat: no-repeat;
+    background-position: center; 
+    border: 1px solid #eee;
+	cursor: pointer;
+}
+.text-box{
+	width: 100%;
+	border: 1px solid #eee;
+	height: 30px;
+	padding: 5px;
+}
+
+
 
 
