@@ -24,7 +24,7 @@
 				<div class="selected"><div class="icon-class"><i class="material-icons md-18">dashboard</i></div><div class="entry-word">Dashboard</div></div>
 			</div>
 			<div class="nav-entry">
-				<div class="selected-corporate"><div class="icon-class"><i class="material-icons md-18">view_carousel</i></div><div class="entry-word">Projects</div></div>
+				<div class="selected"><div class="icon-class"><i class="material-icons md-18">view_carousel</i></div><div class="entry-word">Projects</div></div>
 			</div>
 			<div class="nav-entry">
 				<div class="selected"><div class="icon-class"><i class="material-icons md-18">insert_chart</i></div><div class="entry-word">Performance</div></div>
@@ -40,7 +40,7 @@
 			</div>
 		</div>
 		<div class="nav-corporate">
-			<div class="selected-corporate"><div class="icon-class"><i class="material-icons md-18">copyright</i></div><div class="entry-word">MotionPoint 2016</div></div>
+			<div class="selected-corporate"><div class="icon-class"><i class="material-icons md-18">copyright</i></div><div class="entry-word">MotionPoint</div></div>
 		</div>
 	</div>
 	
@@ -48,15 +48,15 @@
 	<div class="main-container" data-ng-controller="portController" data-ng-init="init('<c:url value="/api/client/all" />')">
 		<div class="top-bar">
 			<div class="top-top-bar">
-			</div>
-		top bar
-		</div>
-		<div class="port-client-box" data-ng-repeat="entry in data">
+			<div class="port-client-box" data-ng-repeat="entry in data">
 			<a href="<c:url value="/transcribe/"/>{{ entry.slug }}">
 				<img src="<c:url value="/resources/images/logos/" />{{ entry.slug }}.png" class="port-client-image">
-			</a>
+			</a><br/>
 			{{ entry.clientName }}		
 		</div>
+			</div>
+		</div>
+		
 	</div>
 </div>
 </body>

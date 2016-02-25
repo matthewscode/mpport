@@ -32,14 +32,16 @@ a:hover{
 .port-client-box{
 	display: inline-block;
 	width: 20%;
-	height: 20%;
+	height: 60px;;
 	text-align: center;
 	font-size: 18px;
-	padding: 5px;
+	padding: 2px;
+	padding-right: 5px;
 }
 
 .port-client-image{
 	max-width: 100%;
+	height: 55px;
 }
 
 .login-bg{
@@ -102,26 +104,33 @@ a:hover{
 	width: 100%;
 	height: 100.00vh;
 	overflow: hidden;
+	background-image: url(nav-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
 }
 
 .main-nav{
 	height: 100%;
 	width: 12%;
-	background: #222;
+	min-width: 250px;
+	background: rgba(0,153,224,0.8);
 	float: left;
 	postition: absolute;
 }
 .main-container{
-	width:88%;
+	
+	min-width: calc(100% - 250px);
+	width: auto;
 	height: 100%;
 	float: left;
-	background: rgba(203, 203, 210, 0.15);
+	background: #f1f1f1;
 }
 
 .logo{
+	height: 80px;
 	width: 100%;
 	color: #fff;
-	padding: 10px 15px;
+	padding: 20px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	padding-left: 18%;
 }
@@ -169,10 +178,15 @@ a:hover{
 	height: 100%;
 	border-radius: 4px;
 }
-.selected:hover, .selected-corporate{
+.selected:hover{
 	border-radius: 4px;
-	background: rgba(0, 153, 224, 0.7);
+	background: rgba(255, 255, 255, 0.4);
 	cursor: pointer;
+	
+}
+.selected-corporate{
+	border-radius: 4px;
+	background: rgba(255, 255, 255,1.0);
 	
 }
 .nav-corporate{
@@ -194,11 +208,11 @@ a:hover{
 
 .top-bar{
 	width: 100%;
-	height: 60px;
+	height: 80px;
 	border-bottom: 1px solid #c1c1c1;
 }
 .top-top-bar{
-	height: 60px;
+	height: 80px;
 	width: 100%;
 	background: #fff;
 }
@@ -214,6 +228,13 @@ a:hover{
 }
 .entry-word{
 	float: left;
+}
+
+.client-bar{
+	width: 80%;
+	height: 40px;
+	background: #fff;
+	border-bottom: 1px solid #c1c1c1;
 }
 
 
