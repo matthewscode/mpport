@@ -5,22 +5,59 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>MotionPoint: Port</title>
+<title>MP: EntryPoint</title>
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css" />">
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.min.js"></script>
 <script src=<c:url value="/resources/js/port.js" />></script> 
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body data-ng-app="portApp">
-	<div data-ng-controller="portController" data-ng-init="init('<c:url value="/api/client/all" />')">
-			<div class="homeWrapper">
-				<div class="port-client-box" data-ng-repeat="entry in data">
-				<a href="<c:url value="/transcribe/"/>{{ entry.slug }}">
-					<img src="<c:url value="/resources/images/logos/" />{{ entry.slug }}.png" class="port-client-image">
-				</a>
-					{{ entry.clientName }}		
-				</div>
+<div class="wrapper">
+
+<!--  navigation -->
+	<div class="main-nav">
+		<div class="logo">
+			<img src="<c:url value="/resources/css/mp.png" />" class="logo-img" /><a href="" class="logo-text">ENTRYPOINT</a>
+		</div>
+		<div class="nav-entry-wrapper">
+			<div class="nav-entry">
+				<div class="selected"><div class="icon-class"><i class="material-icons md-18">dashboard</i></div><div class="entry-word">Dashboard</div></div>
 			</div>
+			<div class="nav-entry">
+				<div class="selected-corporate"><div class="icon-class"><i class="material-icons md-18">view_carousel</i></div><div class="entry-word">Projects</div></div>
+			</div>
+			<div class="nav-entry">
+				<div class="selected"><div class="icon-class"><i class="material-icons md-18">insert_chart</i></div><div class="entry-word">Performance</div></div>
+			</div>
+			<div class="nav-entry">
+				<div class="selected"><div class="icon-class"><i class="material-icons md-18">assignment</i></div><div class="entry-word">Activity</div></div>
+			</div>
+			<div class="nav-entry">
+				<div class="selected"><div class="icon-class"><i class="material-icons md-18">business_center</i></div><div class="entry-word">Company</div></div>
+			</div>
+			<div class="nav-entry">
+				<div class="selected"><div class="icon-class"><i class="material-icons md-18">group</i></div><div class="entry-word">Peers</div></div>
+			</div>
+		</div>
+		<div class="nav-corporate">
+			<div class="selected-corporate"><div class="icon-class"><i class="material-icons md-18">copyright</i></div><div class="entry-word">MotionPoint 2016</div></div>
+		</div>
 	</div>
+	
+<!-- main page -->
+	<div class="main-container" data-ng-controller="portController" data-ng-init="init('<c:url value="/api/client/all" />')">
+		<div class="top-bar">
+			<div class="top-top-bar">
+			</div>
+		top bar
+		</div>
+		<div class="port-client-box" data-ng-repeat="entry in data">
+			<a href="<c:url value="/transcribe/"/>{{ entry.slug }}">
+				<img src="<c:url value="/resources/images/logos/" />{{ entry.slug }}.png" class="port-client-image">
+			</a>
+			{{ entry.clientName }}		
+		</div>
+	</div>
+</div>
 </body>
 </html>

@@ -6,9 +6,19 @@
 }
 
 body {
-    background-color: #333;
+    background-color: #fff;
     margin: 0px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+a, a:visited,  a:active {
+	text-decoration: none;
+	color: inherit;
+}
+a:hover{
+	color: #0099e0;
 }
 
 .homeWrapper{
@@ -85,6 +95,125 @@ body {
 	border: 1px solid #eee;
 	height: 30px;
 	padding: 5px;
+}
+
+
+.wrapper{
+	width: 100%;
+	height: 100.00vh;
+	overflow: hidden;
+}
+
+.main-nav{
+	height: 100%;
+	width: 12%;
+	background: #222;
+	float: left;
+	postition: absolute;
+}
+.main-container{
+	width:88%;
+	height: 100%;
+	float: left;
+	background: rgba(203, 203, 210, 0.15);
+}
+
+.logo{
+	width: 100%;
+	color: #fff;
+	padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	padding-left: 18%;
+}
+
+.logo-text{
+	-webkit-font-smoothing: antialiased;
+    font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+	text-transform: uppercase;
+    padding: 5px 0px;
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 30px;
+}
+.logo-img{
+	margin-top: 4px;
+	height: 30px;
+	display: inline-block;
+	padding-right: 10px;
+	float: left;
+}
+.nav-entry-wrapper{
+	margin-top: 30px;
+	height: calc(100% - 30px);
+}
+.nav-entry{
+	text-transform: uppercase;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	float: left;
+	padding: 10px 15px;
+	font-size: 14px;
+    font-weight: 600;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+	
+}
+.selected{
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+}
+.selected:hover, .selected-corporate{
+	border-radius: 4px;
+	background: rgba(0, 153, 224, 0.7);
+	cursor: pointer;
+	
+}
+.nav-corporate{
+	position: absolute;
+	text-transform: uppercase;
+	width:12%;
+	height: 50px;
+	text-align: center;
+	padding: 10px 15px;
+	font-size: 14px;
+    font-weight: 600;
+	line-height: 30px;
+	color: #ccc;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+	bottom: 10px;
+	left: 0px;
+}
+
+.top-bar{
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px solid #c1c1c1;
+}
+.top-top-bar{
+	height: 60px;
+	width: 100%;
+	background: #fff;
+}
+.top-project-bar{
+	
+}
+.icon-class{
+	width: 40px;
+	height: 24px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 1px;
+}
+.entry-word{
+	float: left;
 }
 
 
