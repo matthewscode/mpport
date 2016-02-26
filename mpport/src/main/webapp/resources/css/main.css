@@ -206,13 +206,24 @@ a:hover{
 }
 .top-top-bar{
 	height: 80px;
-	width: 100%;
+	width: 80%;
 	background: #fff;
 	font-size: 12px;
 	padding: 10px;
 	padding-bottom: 2px;
 	padding-left: 80px;
-	border-bottom: 1px solid #eee;
+	display: inline-block;
+	float: left;
+	border-bottom: 1px solid #e1e1e1;
+}
+.top-account-bar{
+	display: inline-block;
+	width: 20%;
+	height: 80px;
+	padding: 10px;
+	float: left;
+	background: #fff;
+	border-bottom: 1px solid #e1e1e1;
 }
 .top-project-bar{
 	
@@ -273,13 +284,40 @@ a:hover{
 	padding-left: 40px;
 }
 .pr-pie-box {
-	height: 30.00vh;
-	min-height: 400px;
-	width: 25%;
+	height: 25.00vh;
+	min-height: 325px;
+	width: 30%;
 	background: #fff;
-	border: 1px solid #eee;
+	border: 1px solid #e1e1e1;
 	border-radius: 5px;
+	float: left;
+	padding-right: 20px;
 }
+
+.recent-task-box {
+	height: 25.00vh;
+	min-height: 325px;
+	width: 65%;
+	background: #fff;
+	border: 1px solid #e1e1e1;
+	border-radius: 5px;
+	float: left;
+	margin-left: 30px;
+}
+
+.misc-box {
+	height: 25.00vh;
+	min-height: 325px;
+	width: 47.5%;
+	background: #fff;
+	border: 1px solid #e1e1e1;
+	border-radius: 5px;
+	float: left;
+	margin-right: 30px;
+	margin-top: 20px;
+}
+
+
 
 
 

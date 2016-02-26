@@ -71,10 +71,17 @@
 				</div>
 				</div>
 			</div>
+			<div class="top-account-bar">
+				Account
+			</div>
+			
 		</div>
 		<div class="performance-container">
 			<div class="pr-pie-box">
 			</div>
+			<div class="recent-task-box"></div>
+			<div class="misc-box"></div>
+			<div class="misc-box"></div>
 		</div>
 		
 	</div>
