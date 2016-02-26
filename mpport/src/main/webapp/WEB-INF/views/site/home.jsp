@@ -48,12 +48,32 @@
 	<div class="main-container" data-ng-controller="portController" data-ng-init="init('<c:url value="/api/client/all" />')">
 		<div class="top-bar">
 			<div class="top-top-bar">
-			<div class="port-client-box" data-ng-repeat="entry in data">
-			<a href="<c:url value="/transcribe/"/>{{ entry.slug }}">
-				<img src="<c:url value="/resources/images/logos/" />{{ entry.slug }}.png" class="port-client-image">
-			</a><br/>
-			{{ entry.clientName }}		
+				<div class="top-bar-box">
+					<div class="cb-box-wrapper">
+						<div class="client-bar-box" style="background-image: url(<c:url value="/resources/images/logos/mp-ast.png" />)">
+						</div>
+						<div style="height: 20px">&nbsp;</div>
+					</div>
+				</div>
+				<div class="top-bar-box">
+					<div class="cb-box-wrapper">
+						<div class="client-bar-box" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+						</div>
+						<div style="height: 20px">Tesla</div>
+					</div>
+				</div>
+				<div class="top-bar-box" data-ng-repeat="entry in data">
+					<div class="cb-box-wrapper">
+						<div class="client-bar-box" style="background-image: url(<c:url value="/resources/images/logos/" />{{ entry.slug }}.png)">
+							<a href="<c:url value="/transcribe/"/>{{ entry.slug }}"></a>
+						</div>
+					<div style="height: 20px">{{ entry.clientName }}</div>
+				</div>
+				</div>
+			</div>
 		</div>
+		<div class="performance-container">
+			<div class="pr-pie-box">
 			</div>
 		</div>
 		
