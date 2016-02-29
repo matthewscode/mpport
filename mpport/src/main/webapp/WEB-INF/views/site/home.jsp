@@ -6,9 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>MP: EntryPoint</title>
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css" />">
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.min.js"></script>
-<script src=<c:url value="/resources/js/port.js" />></script> 
+<script src="<c:url value="/resources/chart/Chart.min.js" />"></script>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css" />">
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/chart/angular-chart.min.css" />">
+<script src=<c:url value="/resources/chart/angular-chart.js" />></script>
+
+<script src=<c:url value="/resources/js/port.js" />></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body data-ng-app="portApp">
@@ -77,9 +81,53 @@
 			
 		</div>
 		<div class="performance-container">
-			<div class="pr-pie-box">
+			<div class="pr-pie-box" ng-controller="DoughnutCtrl">
+				<div class="box-head">
+				Performance
+				</div>
+				<div class="box-body">
+
+						 <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels"></canvas>
+						 <div class="chart-data">
+							<font color="#0099e0">Completed: {{ data[0] }}</font>
+							<font color="#555">Failure: {{ data[1] }}</font>
+						</div>
+				</div>
+				<div class="box-foot">2 Weeks &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=""><font color="#d1d1d1">All Time </font></a></div>
+
 			</div>
-			<div class="recent-task-box"></div>
+			<div class="recent-task-box">
+				<div class="box-head">
+					Recent Actions
+				</div>
+				<div class="box-entry">
+					<div class="box-entry-img" style="background-image: url(<c:url value="/resources/images/logos/mizuno-golf.png" />">
+					</div>
+					<div class="box-entry-text" > Translation completed for image: #73 <br><font size="1" color="#d1d1d1">2-29-2016 16:31</font></div>
+					
+				</div>
+				<div class="box-entry">
+					<div class="box-entry-img" style="background-image: url(<c:url value="/resources/images/logos/mizuno-golf.png" />">
+					</div>
+					<div class="box-entry-text" >Transcription completed for image: #73<br><font size="1" color="#d1d1d1">2-29-2016 16:29</font></div>
+					
+				</div>
+				<div class="box-entry">
+					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+					</div>
+					<div class="box-entry-text" >Translation completed for segment: #3328<br><font size="1" color="#d1d1d1">2-28-2016 11:12</font></div>
+				</div>
+				<div class="box-entry">
+					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+					</div>
+					<div class="box-entry-text" >Translation completed for segment: #3325<br><font size="1" color="#d1d1d1">2-28-2016 11:03</font></div>
+				</div>
+				<div class="box-entry">
+					<div class="box-entry-img" style="background-image: url(<c:url value="/resources/images/logos/zen-pencils.png" />)">
+					</div>
+					<div class="box-entry-text" ><font color="#F7464A"><strong>Segment translation rejected for segment: #117</strong></font><br><font size="1" color="#d1d1d1">2-28-2016 10:59</font></div>
+				</div>
+			</div>
 			<div class="misc-box"></div>
 			<div class="misc-box"></div>
 		</div>

@@ -1,5 +1,9 @@
-var portApp = angular.module('portApp', []);
+var portApp = angular.module('portApp', ['chart.js']);
 
+portApp.controller("DoughnutCtrl", function ($scope) {
+	  $scope.labels = ["Completed", "Returned"];
+	  $scope.data = [85,2];
+	});
 
 portApp.controller('portController', ['$scope', '$http', function($scope, $http) {
 	
