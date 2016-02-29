@@ -93,7 +93,7 @@
 							<font color="#555">Failure: {{ data[1] }}</font>
 						</div>
 				</div>
-				<div class="box-foot">2 Weeks &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=""><font color="#d1d1d1">All Time </font></a></div>
+				<div class="box-foot"><button ng-click="twoWeeks()" class="chart-button">2 Weeks</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button ng-click="allTime()" class="chart-button">All Time</button></div>
 
 			</div>
 			<div class="recent-task-box">
@@ -128,7 +128,17 @@
 					<div class="box-entry-text" ><font color="#F7464A"><strong>Segment translation rejected for segment: #117</strong></font><br><font size="1" color="#d1d1d1">2-28-2016 10:59</font></div>
 				</div>
 			</div>
-			<div class="misc-box"></div>
+			<div class="misc-box">
+				<div class="box-head">
+					Assigned Tasks
+				</div>
+				<div class="box-entry">
+					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+					</div>
+					<div class="box-entry-text" >13 Pages have been assigned to you.<br><font size="1" color="#d1d1d1">2-28-2016 11:12</font></div>
+				</div>
+			
+			</div>
 			<div class="misc-box"></div>
 		</div>
 		
