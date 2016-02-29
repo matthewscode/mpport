@@ -90,7 +90,7 @@
 						 <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels"></canvas>
 						 <div class="chart-data">
 							<font color="#0099e0">Completed: {{ data[0] }}</font>
-							<font color="#555">Failure: {{ data[1] }}</font>
+							<font color="#555">Returned: {{ data[1] }}</font>
 						</div>
 				</div>
 				<div class="box-foot"><button ng-click="twoWeeks()" class="chart-button">2 Weeks</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button ng-click="allTime()" class="chart-button">All Time</button></div>
@@ -101,13 +101,13 @@
 					Recent Actions
 				</div>
 				<div class="box-entry">
-					<div class="box-entry-img" style="background-image: url(<c:url value="/resources/images/logos/mizuno-golf.png" />">
+					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
 					</div>
 					<div class="box-entry-text" > Translation completed for image: #73 <br><font size="1" color="#d1d1d1">2-29-2016 16:31</font></div>
 					
 				</div>
 				<div class="box-entry">
-					<div class="box-entry-img" style="background-image: url(<c:url value="/resources/images/logos/mizuno-golf.png" />">
+					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
 					</div>
 					<div class="box-entry-text" >Transcription completed for image: #73<br><font size="1" color="#d1d1d1">2-29-2016 16:29</font></div>
 					
@@ -123,23 +123,46 @@
 					<div class="box-entry-text" >Translation completed for segment: #3325<br><font size="1" color="#d1d1d1">2-28-2016 11:03</font></div>
 				</div>
 				<div class="box-entry">
-					<div class="box-entry-img" style="background-image: url(<c:url value="/resources/images/logos/zen-pencils.png" />)">
+					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
 					</div>
 					<div class="box-entry-text" ><font color="#F7464A"><strong>Segment translation rejected for segment: #117</strong></font><br><font size="1" color="#d1d1d1">2-28-2016 10:59</font></div>
 				</div>
 			</div>
 			<div class="misc-box">
 				<div class="box-head">
-					Assigned Tasks
+					Tesla Apps
 				</div>
-				<div class="box-entry">
-					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+				<div class="misc-body">
+					<div class="misc-entry" style="background-image: url();">
+					Image Workbench
 					</div>
-					<div class="box-entry-text" >13 Pages have been assigned to you.<br><font size="1" color="#d1d1d1">2-28-2016 11:12</font></div>
+					<div class="misc-entry">
+					Segment Translation
+					</div>
+					<div class="misc-entry">
+					Grab Bag
+					</div>
+					<div class="misc-entry">
+					Growth Analysis
+					</div>
+					<div class="misc-entry">
+						Client Portal
+					</div>
+					
+					
 				</div>
-			
+				
+
 			</div>
-			<div class="misc-box"></div>
+			<div class="misc-box">
+				<div class="box-head">
+					Translation Index
+				</div>
+				<div class="misc-body" style="padding: 0px;" ng-controller="LineCtrl">
+				<canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick" >
+				</canvas> 
+				</div>
+			</div>
 		</div>
 		
 	</div>

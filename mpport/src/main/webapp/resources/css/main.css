@@ -315,6 +315,7 @@ a:hover{
 	float: left;
 	margin-right: 30px;
 	margin-top: 20px;
+	position: relative;
 }
 
 .box-head {
@@ -322,10 +323,10 @@ a:hover{
 	width: 100%;
 	background: #f1f1f1;
 	height: 40px;
-	font-size: 18px;
-	line-height: 40px;
+	font-size: 16px;
 	padding-left: 10px;
 	text-align: left;
+	line-height: 40px;
 }
 .box-body {
 	height: calc(100% - 80px);
@@ -412,6 +413,43 @@ a:hover{
 	background: #fff;
 	border: 0px;
 	color: #ccc;
+}
+
+
+.misc-body {
+	height: calc(100% - 40px);
+	background: #fff;
+	width: 100%;
+	font-size: 12px;
+	padding: 20px;
+	position: absolute;
+}
+.misc-entry{
+	height: 48%;
+	width: 32%;
+	background: #f1f1f1;
+	border: 1px solid #a1a1a1;
+	border-radius: 3px;
+	display: inline-block;
+	color: 333;
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+	line-height: 110px;
+	margin-bottom: 4px;
+	 -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.misc-entry:hover{
+	background-color: #c1c1c1;
+	border: 1px solid #c1c1c1;
+	cursor: pointer;
+
+	
 }
 
 

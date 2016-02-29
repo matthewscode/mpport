@@ -15,10 +15,10 @@ portApp.controller("DoughnutCtrl", function ($scope) {
 portApp.controller("LineCtrl", function ($scope) {
 
 	  $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-	  $scope.series = ['Series A', 'Series B'];
+	  $scope.series = ['Translated', 'Total'];
 	  $scope.data = [
-	    [65, 59, 80, 81, 56, 55, 40],
-	    [28, 48, 40, 19, 86, 27, 90]
+	    [0, 1100, 2000, 3350, 3412, 3856, 4212],
+	    [2300, 2100, 3300, 3820, 3810, 4200, 4212]
 	  ];
 	  $scope.onClick = function (points, evt) {
 	    console.log(points, evt);
