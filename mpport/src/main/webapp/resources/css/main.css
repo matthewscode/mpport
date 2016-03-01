@@ -306,7 +306,7 @@ a:hover{
 }
 
 .misc-box {
-	height: 45%;
+	height: 50%;
 	min-height: 325px;
 	width: 47.5%;
 	background: #fff;
@@ -425,33 +425,62 @@ a:hover{
 	position: absolute;
 }
 .misc-entry{
-	height: 48%;
+	height: 49%;
 	width: 32%;
 	background: #f1f1f1;
 	border: 1px solid #a1a1a1;
 	border-radius: 3px;
 	display: inline-block;
-	color: 333;
-	font-size: 14px;
+	color: #333;
+	font-size: 20px;
 	font-weight: 600;
 	text-align: center;
-	line-height: 110px;
-	margin-bottom: 4px;
-	 -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
+ 	padding-top: 55px;
+    background-position: center; 
+	background-repeat: no-repeat;
+	margin-top: 5px;
+	opacity: 0.7;
 }
 
 .misc-entry:hover{
-	background-color: #c1c1c1;
 	border: 1px solid #c1c1c1;
 	cursor: pointer;
-
-	
+	background: rgba(0, 153, 224, 0.9);
+	background-position: center; 
+	background-repeat: no-repeat;
+	color: #f1f1f1;
+	opacity: 1.0;
 }
 
+.chart-body {
+	background: #fff;
+	font-size: 12px;
+	padding: 20px;
 
+}
+
+.app-entry {
+	height: 20%;
+    width: 96%;
+    margin-left: 2%;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 1%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 80px;
+}
+.app-entry:hover {
+	color: #0099e0;
+	cursor: pointer;
+}
+.app-entry-text{
+    width: calc(100% - 70px);
+    height: 100%;
+    line-height: 45px;
+    padding-left: 1%;
+    display: inline-block;
+    float: left;
+}
 
 

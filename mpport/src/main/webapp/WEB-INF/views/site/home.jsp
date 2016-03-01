@@ -9,7 +9,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.min.js"></script>
 <script src="<c:url value="/resources/chart/Chart.min.js" />"></script>
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css" />">
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/chart/angular-chart.min.css" />">
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/chart/angular-chart.css" />">
 <script src=<c:url value="/resources/chart/angular-chart.js" />></script>
 
 <script src=<c:url value="/resources/js/port.js" />></script>
@@ -125,7 +125,7 @@
 				<div class="box-entry">
 					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
 					</div>
-					<div class="box-entry-text" ><font color="#F7464A"><strong>Segment translation rejected for segment: #117</strong></font><br><font size="1" color="#d1d1d1">2-28-2016 10:59</font></div>
+					<div class="box-entry-text" ><font color="#F7464A"><strong>Segment translation rejected for segment: #1117</strong></font><br><font size="1" color="#d1d1d1">2-28-2016 10:59</font></div>
 				</div>
 			</div>
 			<div class="misc-box">
@@ -133,36 +133,52 @@
 					Tesla Apps
 				</div>
 				<div class="misc-body">
-					<div class="misc-entry" style="background-image: url();">
-					Image Workbench
+				<div class="app-entry">
+					<div class="box-entry-img">
+						<i class="material-icons" style="font-size: 36px; color: #624070;">translate</i>
 					</div>
-					<div class="misc-entry">
-					Segment Translation
+					<div class="app-entry-text">TRANSLATION DESK
 					</div>
-					<div class="misc-entry">
-					Grab Bag
-					</div>
-					<div class="misc-entry">
-					Growth Analysis
-					</div>
-					<div class="misc-entry">
-						Client Portal
-					</div>
-					
-					
 				</div>
-				
-
+				<div class="app-entry">
+					<div class="box-entry-img">
+						<i class="material-icons" style="font-size: 36px; color: #556270">insert_photo</i>
+					</div>
+					<div class="app-entry-text"> IMAGE WORKBENCH
+					</div>
+				</div>
+				<div class="app-entry">
+					<div class="box-entry-img">
+						<i class="material-icons" style="font-size: 36px; color: #FF6B6B">insert_chart</i>
+					</div>
+					<div class="app-entry-text"> GLOBAL GROWTH
+					</div>
+				</div>
+				<div class="app-entry">
+					<div class="box-entry-img">
+						<i class="material-icons" style="font-size: 36px; color: #4ECDC4">web</i>
+					</div>
+					<div class="app-entry-text"> PUBLIC GRAB
+					</div>
+				</div>
+				<div class="app-entry">
+					<div class="box-entry-img">
+					<i class="material-icons" style="font-size: 36px; color: #C7F464">camera</i>
+					</div>
+					<div class="app-entry-text"> CLIENT PORTAL
+					</div>
+				</div>
+				</div>
 			</div>
-			<div class="misc-box">
+			<div class="misc-box"  ng-controller="LineCtrl">
 				<div class="box-head">
 					Translation Index
 				</div>
-				<div class="misc-body" style="padding: 0px;" ng-controller="LineCtrl">
-				<canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick" >
-				</canvas> 
-				</div>
-			</div>
+				<div class="misc-body" style="padding: 0px;">
+<canvas id="line" class="chart chart-line" chart-data="data"
+  chart-labels="labels" chart-legend="true" chart-series="series"
+  chart-click="onClick" >
+</canvas>			</div>
 		</div>
 		
 	</div>
