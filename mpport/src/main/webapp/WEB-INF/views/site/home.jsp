@@ -51,28 +51,34 @@
 <!-- main page -->
 	<div class="main-container" data-ng-controller="portController" data-ng-init="init('<c:url value="/api/client/all" />')">
 		<div class="top-bar">
-			<div class="top-top-bar">
+			<div class="top-top-bar" ng-init="selectedTab = 'all'">
 				<div class="top-bar-box">
-					<div class="cb-box-wrapper">
+					<div class="inactive" ng-class="{'active' : selectedTab == 'all'}" ng-click="selectedTab = 'all'">
 						<div class="client-bar-box" style="background-image: url(<c:url value="/resources/images/logos/mp-ast.png" />)">
 						</div>
 						<div style="height: 20px">&nbsp;</div>
 					</div>
 				</div>
 				<div class="top-bar-box">
-					<div class="cb-box-wrapper">
+					<div class="inactive" ng-class="{'active' : selectedTab == 'tesla'}" ng-click="selectedTab = 'tesla'">
 						<div class="client-bar-box" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
 						</div>
 						<div style="height: 20px">Tesla</div>
 					</div>
 				</div>
-				<div class="top-bar-box" data-ng-repeat="entry in data">
-					<div class="cb-box-wrapper">
-						<div class="client-bar-box" style="background-image: url(<c:url value="/resources/images/logos/" />{{ entry.slug }}.png)">
-							<a href="<c:url value="/transcribe/"/>{{ entry.slug }}"></a>
+				<div class="top-bar-box">
+					<div class="inactive" ng-class="{'active' : selectedTab == 'zen'}" ng-click="selectedTab = 'zen'">
+						<div class="client-bar-box" style="background-image: url(<c:url value="/resources/images/logos/" />zen-pencils.png)">
 						</div>
-					<div style="height: 20px">{{ entry.clientName }}</div>
+						<div style="height: 20px">Zen Pencils</div>
+					</div>
 				</div>
+				<div class="top-bar-box">
+					<div class="inactive" ng-class="{'active' : selectedTab == 'mizuno'}" ng-click="selectedTab = 'mizuno'">
+						<div class="client-bar-box" style="background-image: url(<c:url value="/resources/images/logos/" />mizuno-golf.png)">
+						</div>
+						<div style="height: 20px">Mizuno Golf</div>
+					</div>
 				</div>
 			</div>
 			<div class="top-account-bar">
@@ -97,6 +103,48 @@
 
 			</div>
 			<div class="recent-task-box">
+				<div class="box-head">
+					Tesla Apps
+				</div>
+				<div class="misc-body">
+				<div class="app-entry">
+					<div class="box-entry-img">
+						<i class="material-icons" style="font-size: 36px; color: #19a3e3;">translate</i>
+					</div>
+					<div class="app-entry-text">TRANSLATION DESK
+					</div>
+				</div>
+				<div class="app-entry">
+					<div class="box-entry-img">
+						<i class="material-icons" style="font-size: 36px; color: #ffb347 ">insert_photo</i>
+					</div>
+					<div class="app-entry-text"> IMAGE WORKBENCH
+					</div>
+				</div>
+				<div class="app-entry">
+					<div class="box-entry-img">
+						<i class="material-icons" style="font-size: 36px; color: #C7F464">insert_chart</i>
+					</div>
+					<div class="app-entry-text"> GLOBAL GROWTH
+					</div>
+				</div>
+				<div class="app-entry">
+					<div class="box-entry-img">
+						<i class="material-icons" style="font-size: 36px; color: #4ECDC4">web</i>
+					</div>
+					<div class="app-entry-text"> PUBLIC GRAB
+					</div>
+				</div>
+				<div class="app-entry">
+					<div class="box-entry-img">
+					<i class="material-icons" style="font-size: 36px; color: #624070">camera</i>
+					</div>
+					<div class="app-entry-text"> CLIENT PORTAL
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="misc-box">
 				<div class="box-head">
 					Recent Actions
 				</div>
@@ -128,55 +176,14 @@
 					<div class="box-entry-text" ><font color="#F7464A"><strong>Segment translation rejected for segment: #1117</strong></font><br><font size="1" color="#d1d1d1">2-28-2016 10:59</font></div>
 				</div>
 			</div>
-			<div class="misc-box">
-				<div class="box-head">
-					Tesla Apps
-				</div>
-				<div class="misc-body">
-				<div class="app-entry">
-					<div class="box-entry-img">
-						<i class="material-icons" style="font-size: 36px; color: #624070;">translate</i>
-					</div>
-					<div class="app-entry-text">TRANSLATION DESK
-					</div>
-				</div>
-				<div class="app-entry">
-					<div class="box-entry-img">
-						<i class="material-icons" style="font-size: 36px; color: #556270">insert_photo</i>
-					</div>
-					<div class="app-entry-text"> IMAGE WORKBENCH
-					</div>
-				</div>
-				<div class="app-entry">
-					<div class="box-entry-img">
-						<i class="material-icons" style="font-size: 36px; color: #FF6B6B">insert_chart</i>
-					</div>
-					<div class="app-entry-text"> GLOBAL GROWTH
-					</div>
-				</div>
-				<div class="app-entry">
-					<div class="box-entry-img">
-						<i class="material-icons" style="font-size: 36px; color: #4ECDC4">web</i>
-					</div>
-					<div class="app-entry-text"> PUBLIC GRAB
-					</div>
-				</div>
-				<div class="app-entry">
-					<div class="box-entry-img">
-					<i class="material-icons" style="font-size: 36px; color: #C7F464">camera</i>
-					</div>
-					<div class="app-entry-text"> CLIENT PORTAL
-					</div>
-				</div>
-				</div>
-			</div>
+			
 			<div class="misc-box"  ng-controller="LineCtrl">
 				<div class="box-head">
 					Translation Index
 				</div>
 				<div class="misc-body" style="padding: 0px;">
 <canvas id="line" class="chart chart-line" chart-data="data"
-  chart-labels="labels" chart-legend="true" chart-series="series"
+  chart-labels="labels" chart-legend="false" chart-series="series"
   chart-click="onClick" >
 </canvas>			</div>
 		</div>

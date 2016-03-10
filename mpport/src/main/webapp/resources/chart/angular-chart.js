@@ -20,9 +20,9 @@
 
   Chart.defaults.global.colours = [
     '#19a3e3', // blue
-    '#555555', // light grey
+    '#F7464A', // light grey
     '#F7464A', // red
-    '#46BFBD', // green
+    '#888888', // green
     '#FDB45C', // yellow
     '#949FB1', // grey
     '#4D5360'  // dark grey

@@ -98,14 +98,15 @@ a:hover{
 	overflow: hidden;
 	background-image: url(nav-bg.jpg);
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-position: left;
+    background-size: auto 100%;
 }
 
 .main-nav{
 	height: 100%;
 	width: 12%;
 	min-width: 250px;
-	background: rgba(0,153,224,0.8);
+	background: rgba(51,51,51,0.8);
 	float: left;
 	postition: absolute;
 }
@@ -251,7 +252,7 @@ a:hover{
 	background: #fff;
 	border-bottom: 1px solid #c1c1c1;
 }
-.cb-box-wrapper {
+.inactive {
 	text-transform: uppercase;
 	margin: 0 auto;
 	width: 70px;
@@ -260,10 +261,14 @@ a:hover{
 	opacity: 0.4;
 	font-size: 10px;
 }
-.cb-box-wrapper:hover {
+.inactive:hover {
 	color: #333;
 	opacity: 1.0;
 	cursor: pointer;
+}
+.active{
+	color: #333;
+	opacity: 1.0;
 }
 
 .client-bar-box {
@@ -303,6 +308,7 @@ a:hover{
 	border-radius: 5px;
 	float: left;
 	margin-left: 30px;
+	position: relative;
 }
 
 .misc-box {
