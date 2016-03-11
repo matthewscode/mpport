@@ -51,30 +51,23 @@
 <!-- main page -->
 	<div class="main-container" data-ng-controller="portController" data-ng-init="init('<c:url value="/api/client/all" />')">
 		<div class="top-bar">
-			<div class="top-top-bar" ng-init="selectedTab = 'all'">
+			<div class="top-top-bar" ng-init="selectedTab = 'tesla'">	
 				<div class="top-bar-box">
-					<div class="inactive" ng-class="{'active' : selectedTab == 'all'}" ng-click="selectedTab = 'all'">
-						<div class="client-bar-box" style="background-image: url(<c:url value="/resources/images/logos/mp-ast.png" />)">
-						</div>
-						<div style="height: 20px">&nbsp;</div>
-					</div>
-				</div>
-				<div class="top-bar-box">
-					<div class="inactive" ng-class="{'active' : selectedTab == 'tesla'}" ng-click="selectedTab = 'tesla'">
+					<div class="inactive" ng-class="{'active' : selectedTab == 'tesla'}" ng-click="selectedTab = 'tesla'; switchClient('tesla')">
 						<div class="client-bar-box" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
 						</div>
 						<div style="height: 20px">Tesla</div>
 					</div>
 				</div>
 				<div class="top-bar-box">
-					<div class="inactive" ng-class="{'active' : selectedTab == 'zen'}" ng-click="selectedTab = 'zen'">
+					<div class="inactive" ng-class="{'active' : selectedTab == 'zen'}" ng-click="selectedTab = 'zen'; switchClient('zen')">
 						<div class="client-bar-box" style="background-image: url(<c:url value="/resources/images/logos/" />zen-pencils.png)">
 						</div>
 						<div style="height: 20px">Zen Pencils</div>
 					</div>
 				</div>
 				<div class="top-bar-box">
-					<div class="inactive" ng-class="{'active' : selectedTab == 'mizuno'}" ng-click="selectedTab = 'mizuno'">
+					<div class="inactive" ng-class="{'active' : selectedTab == 'mizuno'}" ng-click="selectedTab = 'mizuno'; switchClient('mizuno')">
 						<div class="client-bar-box" style="background-image: url(<c:url value="/resources/images/logos/" />mizuno-golf.png)">
 						</div>
 						<div style="height: 20px">Mizuno Golf</div>
@@ -82,14 +75,16 @@
 				</div>
 			</div>
 			<div class="top-account-bar">
-				Account
+				<div class="account-box">
+				Welcome Matthew, <a href=""><font color="#0099e0">Account</font></a>
+				</div>
 			</div>
 			
 		</div>
 		<div class="performance-container">
 			<div class="pr-pie-box" ng-controller="DoughnutCtrl">
 				<div class="box-head">
-				Performance
+				{{ clientName }} Performance
 				</div>
 				<div class="box-body">
 
@@ -104,39 +99,45 @@
 			</div>
 			<div class="recent-task-box">
 				<div class="box-head">
-					Tesla Apps
+					{{ clientName }} Apps
 				</div>
 				<div class="misc-body">
 				<div class="app-entry">
 					<div class="box-entry-img">
 						<i class="material-icons" style="font-size: 36px; color: #19a3e3;">translate</i>
 					</div>
-					<div class="app-entry-text">TRANSLATION DESK
+					<div class="app-entry-text">TRANSLATION DESK <div class="box-entry-img" style="float: none" ng-show="clientName != 'Zen Pencils'">
+						<i class="material-icons" style="font-size: 20px; color: #F7464A;">flash_on</i>
+					</div>
 					</div>
 				</div>
 				<div class="app-entry">
 					<div class="box-entry-img">
 						<i class="material-icons" style="font-size: 36px; color: #ffb347 ">insert_photo</i>
 					</div>
-					<div class="app-entry-text"> IMAGE WORKBENCH
+					<div class="app-entry-text"> IMAGE WORKBENCH <div class="box-entry-img" style="float: none" ng-show="clientName != 'Mizuno Golf'">
+						<i class="material-icons" style="font-size: 20px; color: #F7464A;">flash_on</i>
+					</div>
 					</div>
 				</div>
-				<div class="app-entry">
+				<div class="app-entry" ng-show="clientName != 'Zen Pencils'">
 					<div class="box-entry-img">
 						<i class="material-icons" style="font-size: 36px; color: #C7F464">insert_chart</i>
 					</div>
-					<div class="app-entry-text"> GLOBAL GROWTH
+					<div class="app-entry-text"> GLOBAL GROWTH <div class="box-entry-img" style="float: none" ng-show="clientName == 'Mizuno Golf'">
+						<i class="material-icons" style="font-size: 20px; color: #F7464A;">flash_on</i>
+					</div>
 					</div>
 				</div>
-				<div class="app-entry">
+				<div class="app-entry" ng-show="clientName != 'Zen Pencils' && clientName != 'Mizuno Golf'">
 					<div class="box-entry-img">
 						<i class="material-icons" style="font-size: 36px; color: #4ECDC4">web</i>
 					</div>
 					<div class="app-entry-text"> PUBLIC GRAB
 					</div>
 				</div>
-				<div class="app-entry">
-					<div class="box-entry-img">
+				<div class="app-entry" ng-show="clientName != 'Zen Pencils' && clientName != 'Mizuno Golf'">
+					<div class="box-entry-img" >
 					<i class="material-icons" style="font-size: 36px; color: #624070">camera</i>
 					</div>
 					<div class="app-entry-text"> CLIENT PORTAL
@@ -149,31 +150,31 @@
 					Recent Actions
 				</div>
 				<div class="box-entry">
-					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+					<div class="box-entry-img" style="background-image: url({{ clientLogo }})">
 					</div>
-					<div class="box-entry-text" > Translation completed for image: #73 <br><font size="1" color="#d1d1d1">2-29-2016 16:31</font></div>
+					<div class="box-entry-text" > Translation completed for image: {{ imageNum }} <br><font size="1" color="#d1d1d1">2-29-2016 16:31</font></div>
 					
 				</div>
 				<div class="box-entry">
-					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+					<div class="box-entry-img" style="background-image: url({{ clientLogo }})">
 					</div>
-					<div class="box-entry-text" >Transcription completed for image: #73<br><font size="1" color="#d1d1d1">2-29-2016 16:29</font></div>
+					<div class="box-entry-text" >Transcription completed for image: {{ imageNum }}<br><font size="1" color="#d1d1d1">2-29-2016 16:29</font></div>
 					
 				</div>
 				<div class="box-entry">
-					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+					<div class="box-entry-img" style="background-image: url({{ clientLogo }})">
 					</div>
-					<div class="box-entry-text" >Translation completed for segment: #3328<br><font size="1" color="#d1d1d1">2-28-2016 11:12</font></div>
+					<div class="box-entry-text" >Translation completed for segment: {{ segOne }}<br><font size="1" color="#d1d1d1">2-28-2016 11:12</font></div>
 				</div>
 				<div class="box-entry">
-					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+					<div class="box-entry-img" style="background-image: url({{ clientLogo }})">
 					</div>
-					<div class="box-entry-text" >Translation completed for segment: #3325<br><font size="1" color="#d1d1d1">2-28-2016 11:03</font></div>
+					<div class="box-entry-text" >Translation completed for segment: {{ segTwo }}<br><font size="1" color="#d1d1d1">2-28-2016 11:03</font></div>
 				</div>
 				<div class="box-entry">
-					<div class="box-entry-img" style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+					<div class="box-entry-img" style="background-image: url({{ clientLogo }})">
 					</div>
-					<div class="box-entry-text" ><font color="#F7464A"><strong>Segment translation rejected for segment: #1117</strong></font><br><font size="1" color="#d1d1d1">2-28-2016 10:59</font></div>
+					<div class="box-entry-text" ><font color="#F7464A"><strong>Segment translation rejected for segment: {{ segThree }}</strong></font><br><font size="1" color="#d1d1d1">2-28-2016 10:59</font></div>
 				</div>
 			</div>
 			
