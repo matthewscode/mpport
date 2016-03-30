@@ -78,7 +78,8 @@
 				<div class="account-box">
 				<table><tr><td><img src="resources/images/me.jpg" height="50" /></td><td>
 				<a href=""><font color="#0099e0"> Matthew</font></a><br>
-				MotionPoint
+				MotionPoint<br/>
+				<a href="logout">Logout</a>
 				</td></tr>
 				</table>
 				</div>
