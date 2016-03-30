@@ -17,9 +17,7 @@ a, a:visited,  a:active {
 	text-decoration: none;
 	color: inherit;
 }
-a:hover{
-	color: #0099e0;
-}
+
 
 .homeWrapper{
 	color: #333;
@@ -126,6 +124,7 @@ a:hover{
 	padding: 20px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	padding-left: 18%;
+	background: rgba(255, 255, 255, 0.4);
 }
 
 .logo-text{
@@ -156,10 +155,9 @@ a:hover{
 	height: 50px;
 	text-align: center;
 	float: left;
-	padding: 10px 15px;
 	font-size: 14px;
     font-weight: 600;
-	line-height: 30px;
+	line-height: 40px;
 	text-align: center;
 	color: #fff;
 	-webkit-font-smoothing: antialiased;
@@ -169,30 +167,29 @@ a:hover{
 .selected{
 	width: 100%;
 	height: 100%;
-	border-radius: 4px;
+	line-height: 50px;
 }
 .selected:hover{
-	border-radius: 4px;
 	background: rgba(255, 255, 255, 0.4);
 	cursor: pointer;
 	
 }
 .selected-corporate{
-	border-radius: 4px;
-	background: rgba(255, 255, 255,1.0);
+	width: 100%;
+	height: 100%;
+	line-height: 50px;
 	
 }
 .nav-corporate{
 	position: absolute;
 	text-transform: uppercase;
-	width:12%;
+	width: 16%;
 	height: 50px;
 	text-align: center;
-	padding: 10px 15px;
 	font-size: 14px;
     font-weight: 600;
-	line-height: 30px;
-	color: #ccc;
+	line-height: 50px;
+	color: #fff;
 	-webkit-font-smoothing: antialiased;
 	font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
 	bottom: 10px;
@@ -202,7 +199,7 @@ a:hover{
 .top-bar{
 	width: 100%;
 	height: 80px;
-	border-bottom: 1px solid #c1c1c1;
+	border-bottom: 1px solid #e1e1e1;
 	font-size: 12px;
 }
 .top-top-bar{
@@ -220,21 +217,21 @@ a:hover{
 .top-account-bar{
 	display: inline-block;
 	width: 20%;
-	height: 80px;
+	height: 100%;
 	padding: 0px;
 	float: left;
 	background: #fff;
-	border-bottom: 1px solid #e1e1e1;
 }
 .top-project-bar{
 	
 }
 .icon-class{
-	width: 40px;
-	height: 24px;
+	width: 50px;
+	height: 50px;
 	float: left;
 	margin-left: 20px;
-	margin-top: 1px;
+	margin-top: 10px;
+	line-height: 50px;
 }
 .entry-word{
 	float: left;
@@ -286,9 +283,37 @@ a:hover{
 	width: 100%;
 	background: #f8f8f8;
 	padding: 20px;
-	padding-left: 40px;
+	padding-left: 20px;
 }
 .pr-pie-box {
+	height: 48%;
+	min-height: 325px;
+	width: 31%;
+	background: #fff;
+	border: 1px solid #e1e1e1;
+	border-radius: 5px;
+	float: left;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.logo-box {
+	height: 48%;
+	min-height: 325px;
+	width: 31%;
+	background: #fff;
+	border: 1px solid #e1e1e1;
+	border-radius: 5px;
+	float: left;
+	position: relative;
+	 -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.apps-box {
 	height: 48%;
 	min-height: 325px;
 	width: 30%;
@@ -296,31 +321,32 @@ a:hover{
 	border: 1px solid #e1e1e1;
 	border-radius: 5px;
 	float: left;
-	text-align: center;
-}
-
-.recent-task-box {
-	height: 48%;
-	min-height: 325px;
-	width: 65%;
-	background: #fff;
-	border: 1px solid #e1e1e1;
-	border-radius: 5px;
-	float: left;
-	margin-left: 30px;
+	margin-left: 20px;
 	position: relative;
 }
 
 .misc-box {
 	height: 48%;
-	min-height: 300px;
-	width: 47.5%;
+	min-height: 325px;
+	width: 30%;
 	background: #fff;
 	border: 1px solid #e1e1e1;
 	border-radius: 5px;
 	float: left;
-	margin-right: 30px;
-	margin-top: 20px;
+	margin-left: 20px;
+	position: relative;
+}
+
+.line-chart-box {
+	height: 48%;
+	min-height: 325px;
+	width: 62%;
+	background: #fff;
+	border: 1px solid #e1e1e1;
+	border-radius: 5px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
 	position: relative;
 }
 
@@ -400,7 +426,7 @@ a:hover{
 	
 }
 .box-entry-text {
-	width: calc(100% - 70px);
+	width: 100%;
 	height: 100%;
 	line-height: 23px;
 	padding-left: 1%;
@@ -427,8 +453,13 @@ a:hover{
 	background: #fff;
 	width: 100%;
 	font-size: 12px;
-	padding: 20px;
+	padding: 10px;
 	position: absolute;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	background-position: center; 
 }
 .misc-entry{
 	height: 49%;
@@ -477,7 +508,6 @@ a:hover{
     line-height: 80px;
 }
 .app-entry:hover {
-	color: #0099e0;
 	cursor: pointer;
 }
 .app-entry-text{
@@ -485,14 +515,26 @@ a:hover{
     height: 100%;
     line-height: 45px;
     padding-left: 1%;
-    display: inline-block;
-    float: left;
 }
 .account-box{
+	margin-top: 4px;
+	margin-right: 4px;
 	padding: 7px;
-	height: 30px;
-	background: rgba(51,51,51,0.8);
-	border-radius: 0px 0px 0px 5px;
-	color: #f8f8f8;
+	height: 90%;
+	background: #f8f8f8;
+	border-radius: 5px;
+	border: 1px solid #c1c1c1;
+	color: #333;
 }
-
+ .new-badge {
+    height: 15px;
+    width: 30px;
+    padding-left: 1px;
+    border-radius: 2px;
+    background: #fa7888;
+    color: #fff;
+    font-weight: 500;
+    line-height: 15px;
+    display: inline-block;
+        margin-left: 5px;
+}

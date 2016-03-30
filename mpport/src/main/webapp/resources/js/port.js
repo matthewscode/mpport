@@ -38,7 +38,7 @@ portApp.controller('portController', ['$scope', '$http', function($scope, $http)
 		}
 		$scope.dataUrl = url;
 		$scope.clientName = 'Tesla';
-		$scope.clientLogo = 'http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png';
+		$scope.clientLogo = 'resources/images/logos/tesla.png';
 		$scope.imageNum = '#73';
 		$scope.segOne = '#3328';
 		$scope.segTwo = '#3325';
@@ -48,7 +48,7 @@ portApp.controller('portController', ['$scope', '$http', function($scope, $http)
 				$scope.$broadcast('lineDataChange', $scope.teslaData);
 				$scope.$broadcast('donutDataChange', $scope.teslaDonut);
 				$scope.clientName = 'Tesla';
-				$scope.clientLogo = 'http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png';
+				$scope.clientLogo = 'resources/images/logos/tesla.png';
 				$scope.imageNum = '#73';
 				$scope.segOne = '#3328';
 				$scope.segTwo = '#3325';

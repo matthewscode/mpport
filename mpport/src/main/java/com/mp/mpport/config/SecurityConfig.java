@@ -34,8 +34,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     	http
     	.authorizeRequests()
     	.antMatchers("/login**").permitAll()
-    	.antMatchers("/**").access("hasRole('ROLE_ADMIN')")
     	.antMatchers("/resources/**").permitAll()
+    	.antMatchers("/**").access("hasRole('ROLE_ADMIN')")
     	.and().formLogin().loginProcessingUrl("/j_spring_security_check")
     		.loginPage("/login").usernameParameter("username").passwordParameter("password")
     		.failureUrl("/login?error")

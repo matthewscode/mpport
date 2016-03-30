@@ -19,13 +19,13 @@
   Chart.defaults.global.multiTooltipTemplate = '<%if (datasetLabel){%><%=datasetLabel%>: <%}%><%= value %>';
 
   Chart.defaults.global.colours = [
-    '#19a3e3', // blue
-    '#F7464A', // light grey
-    '#F7464A', // red
+    '#4D5360', // blue #19a3e3
+    '#949FB1', // light grey
+    '#949FB1', // red
     '#888888', // green
     '#FDB45C', // yellow
     '#949FB1', // grey
-    '#4D5360'  // dark grey
+    '#19a3e3'  // dark grey #4D5360
   ];
 
   var usingExcanvas = typeof window.G_vmlCanvasManager === 'object' &&
