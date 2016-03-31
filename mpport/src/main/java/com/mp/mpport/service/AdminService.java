@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class AdminService {
 	}
 	
 	private void propogateKey(Client client, ClientKey newCk) throws IOException {
-		String postData = "username=" + newCk.getUser().getUserName() + "&keyString=" + newCk.getKey();
+		String postData = "username=" + URLEncoder.encode(newCk.getUser().getUserName(), "UTF-8") + "&keyString=" + URLEncoder.encode(newCk.getKey(), "UTF-8");
 		URL url = new URL(client.getApiLocation()+"/api/user-key/create/");
 		HttpURLConnection  httpConn = (HttpURLConnection) url.openConnection();
         httpConn.setUseCaches(false);
