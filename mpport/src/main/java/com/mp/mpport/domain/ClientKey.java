@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class ClientKey {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private int id;
 	
@@ -22,8 +22,8 @@ public class ClientKey {
 	@JoinColumn(name = "user")
 	private User user;
 	
-	@Column(name = "key")
-	private String key;
+	@Column(name = "key_string")
+	private String keyString;
 	
 	@ManyToOne
 	@JoinColumn(name = "client")
@@ -46,11 +46,11 @@ public class ClientKey {
 	}
 
 	public String getKey() {
-		return key;
+		return keyString;
 	}
 
 	public void setKey(String key) {
-		this.key = key;
+		this.keyString = key;
 	}
 
 	public Client getClient() {

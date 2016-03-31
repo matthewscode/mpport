@@ -19,4 +19,9 @@ public class ClientKeyDAO {
 	public List<ClientKey> getUserClientKeyList(User user) {
 		return sessionFactory.getCurrentSession().createCriteria(ClientKey.class).add(Restrictions.eq("user", user)).list();
 	}
+	
+	public boolean addClientKey(ClientKey clientKey) {
+		sessionFactory.getCurrentSession().saveOrUpdate(clientKey);
+		return true;
+	}
 }

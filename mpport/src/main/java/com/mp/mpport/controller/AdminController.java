@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mp.mpport.domain.Client;
 import com.mp.mpport.service.AdminService;
@@ -34,4 +36,11 @@ public class AdminController {
 		}
         return "redirect:add-client";
     }
+	
+	//TODO move to a post
+	@ResponseBody
+	@RequestMapping(value = "/add-key/{username}/{clientSlug}", method = RequestMethod.GET)
+	public boolean addUserKey(@PathVariable("username") String username, @PathVariable("clientSlug") String clientSlug){
+		return adminService.addUserKey(username, clientSlug);
+	}
 }
