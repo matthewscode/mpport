@@ -62,7 +62,7 @@ ttApp.controller('ApiController', ['$scope', '$http', function($scope, $http) {
 		    });
 	};
 	
-	$scope.loadMore = function(increment) {
+	$scope.loadMore = function(url, increment) {
 		console.log('loading');
 		if(increment){
 			$scope.increment = increment
@@ -70,7 +70,7 @@ ttApp.controller('ApiController', ['$scope', '$http', function($scope, $http) {
 			$scope.increment = 25;
 		}
 		$scope.nextEnd = $scope.nextStart + $scope.increment;
-		url = 'api/ft/start/' +$scope.nextStart + '/end/' + $scope.nextEnd;
+		url = url +  '/api/ft/start/' +$scope.nextStart + '/end/' + $scope.nextEnd;
 		$scope.nextStart = $scope.nextEnd + 1;
 		$scope.nextEnd = $scope.nextStart + $scope.increment;
 		$http.get(url)
@@ -88,9 +88,22 @@ ttApp.controller('ApiController', ['$scope', '$http', function($scope, $http) {
 
 ttApp.controller('FileController', ['$scope', '$http', function($scope, $http) {
 	$scope.showEditor = false;
+	$scope.showAdminMenu = false;
 	$scope.editorLoading = false;
+	$scope.assignedImages =[];
 	$scope.currentFile = { };
 	$scope.setEditor = function(url, checksumId, imgUrl, model){
+		if($scope.showAdminMenu){
+			var addToArray=true;
+			for(var i=0;i<$scope.assignedImages.length;i++){
+			    if($scope.assignedImages[i] === imgUrl){
+			        addToArray=false;
+			    }
+			}
+			if(addToArray){
+				$scope.assignedImages.push(imgUrl);
+			}
+		}else{
 		$scope.showEditor = true;
 		$scope.editorLoading = true;
 		$scope.currentFile = model;
@@ -111,8 +124,12 @@ ttApp.controller('FileController', ['$scope', '$http', function($scope, $http) {
 		 .error(function(data, status, headers, config) {
     		 console.log('lol u errored')
 	    });
+		}
 	}
 	$scope.submitTranscription = function(url, transcriptionId, text, cid){
+		$scope.dataUrl = url;
+		
+		$scope.options = {};
 		console.log('test: ' +cid);
 		var data = {
 				id: transcriptionId,
@@ -152,6 +169,16 @@ ttApp.controller('FileController', ['$scope', '$http', function($scope, $http) {
 	    .error(function(data, status, headers, config) {
     		 console.log('lol u errored')
 	    });
+	}
+	
+	$scope.enableAdminMenu = function(){
+		console.log('trying');
+		$scope.showAdminMenu = !$scope.showAdminMenu;
+	}
+	
+	$scope.removeImageUrl = function(imageUrl){
+		var imgIndex = $scope.assignedImages.indexOf(imageUrl);
+		$scope.assignedImages.splice(imgIndex, 1);
 	}
 }]);
 
