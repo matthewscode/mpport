@@ -132,46 +132,55 @@
 	<div class="ft-bottom-bottom-bar" ng-show="showAdminMenu && assignedImages.length > 0">
 		<div class="admin-image-list">
 			<div ng-repeat="imgUrl in assignedImages" class="admin-image-entry" ng-click="removeImageUrl(imgUrl)">
+			<table width="100%" height="100%">
+			<tr>
+			<td valign="center">
 				<img src="{{ imgUrl }}" class="admin-image">
+			</td>
+			</tr>
+			</table>
 			</div>
 		</div>
 		<div class="admin-options" ng-init="tab=0">
+		<table width="100%" height="100%"><tr>
+		<td width="100%" height="45%" valign="center">
 		<div class="tstl" ng-show="assignedImages.length > 0" ng-click="tab = 1" ng-class="{'option-active': tab == 1}">TRANSCRIBE</div>
+		</td>
+		</tr>
+		<tr>
+		<td width="100%" height="45%" valign="center">
 		<div class="tstl" ng-show="assignedImages.length > 0" ng-click="tab = 2" ng-class="{'option-active': tab == 2}">TRANSLATE</div>
-		
+		</td>
+		</tr>
+		<tr><td height="10%">&nbsp;</td></tr>
+		</table>
 		</div>
 		<div class="admin-users" ng-show="assignedImages.length > 0">
 		<table height="100%" width="100%">
 		<tr>
 			<td>
-			<a href="">Enrique Del Sol</a><br/>
-			<a href="">Tom Shooter</a><br/>
-			<a href="">Darrius Serval</a><br/>
-			<a href="">Manuel Jimmies</a><br/>
-			<a href="">Value Saucer</a><br/>
-			<a href="">Meena Rlongname</a><br/>
-			<a href="">Collin Kaepernick</a><br/>
-			<a href="">Lester Parry</a><br/>
+			<div class="user-entry" ng-click="user = 1" ng-class="{'option-active': user == 1}">Enrique Transcend</div>
+			<div class="user-entry" ng-click="user = 2" ng-class="{'option-active': user == 2}">Eugena Aperture</div>
+			<div class="user-entry" ng-click="user = 3" ng-class="{'option-active': user == 3}">Meena Resonance</div>
+			<div class="user-entry" ng-click="user = 4" ng-class="{'option-active': user == 4}">Manuel Jetstream</div>
+			<div class="user-entry" ng-click="user = 5" ng-class="{'option-active': user == 5}">Valerie Solar</div>
+			<div class="user-entry" ng-click="user = 7" ng-class="{'option-active': user == 6}">Collin Blueshift</div>
 			</td>
 			<td>
-			<a href="">Todd Michelin</a><br/>
-			<a href="">Nick Yin</a><br/>
-			<a href="">Tim Yang</a><br/>
-			<a href="">Brian Yoyo</a><br/>
-			<a href="">Ashley Bubba</a><br/>
-			<a href="">Jon Avast</a><br/>
-			<a href="">Yonas Clipper</a><br/>
-			<a href="">Kent Hovind</a><br/>
+			<div class="user-entry" ng-click="user = 11" ng-class="{'option-active': user == 11}">Adam Refraction</div>
+			<div class="user-entry" ng-click="user = 12" ng-class="{'option-active': user == 12}">Benjamin Fission</div>
+			<div class="user-entry" ng-click="user = 13" ng-class="{'option-active': user == 13}">Eric Fusion</div>
+			<div class="user-entry" ng-click="user = 14" ng-class="{'option-active': user == 14}">Dave Jetflow</div>
+			<div class="user-entry" ng-click="user = 15" ng-class="{'option-active': user == 15}">Ian Sediment</div>
+			<div class="user-entry" ng-click="user = 17" ng-class="{'option-active': user == 16}">Isa Ion</div>
 			</td>
 			<td>
-			<a href="">Benjamin Fold</a><br/>
-			<a href="">Eric Field</a><br/>
-			<a href="">Claudia Albatross</a><br/>
-			<a href="">Dave Jukes</a><br/>
-			<a href="">Ian Salisbury</a><br/>
-			<a href="">Isa Isa</a><br/>
-			<a href="">Brenda Frazier</a><br/>
-			<a href="">Chip and Dale</a><br/>
+			<div class="user-entry" ng-click="user = 21" ng-class="{'option-active': user == 21}">William Flare</div>
+			<div class="user-entry" ng-click="user = 22" ng-class="{'option-active': user == 22}">Todd Mitosis</div>
+			<div class="user-entry" ng-click="user = 23" ng-class="{'option-active': user == 23}">Nick Yolk</div>
+			<div class="user-entry" ng-click="user = 24" ng-class="{'option-active': user == 24}">Bryan Yeast</div>
+			<div class="user-entry" ng-click="user = 25" ng-class="{'option-active': user == 25}">Ashley Efferent</div>
+			<div class="user-entry" ng-click="user = 27" ng-class="{'option-active': user == 26}">Isa Ion</div>
 			</td>
 			
 		</tr>
