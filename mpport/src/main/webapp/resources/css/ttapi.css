@@ -387,6 +387,11 @@ a, a:visited, a:hover, a:active {
 	overflow: hidden;
 	margin-top: 2px;
 }
+.admin-image-entry:hover {
+	border: 1px solid #0099E0;
+	background: rgba(0,153,224, 0.8);
+	cursor: pointer;
+}
 .admin-image-list {
 	padding: 5px;
 	float: left;
