@@ -159,7 +159,7 @@
 						working in the boring corporate graphic design industry for 8
 						years before finally quitting at the end of 2011 to pursue my
 						passion for illustration and cartooning. At my old job, when my
-						boss wasn’t looking, I would waste time reading Wikipedia pages,
+						boss wasnt looking, I would waste time reading Wikipedia pages,
 						mainly biographies about people whose lives were a lot more
 						interesting than mine. Their stories and quotes eventually
 						inspired me to leave my job to focus on what I really wanted to

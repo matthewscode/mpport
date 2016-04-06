@@ -185,7 +185,7 @@ a, a:visited, a:hover, a:active {
 
 .ft-top-nav {
 	padding: 3px;
-	padding-left: 6px;
+	padding-left: 12px;
 	height: 40px;
 	width: 100%;
 	background: #333;
@@ -376,9 +376,10 @@ a, a:visited, a:hover, a:active {
 	max-height: 100%;
 }
 .admin-image-entry {
+	border: 1px solid #f1f1f1;
 	background: #f1f1f1;
-	width: 15%;
-	height: 49%;
+	width: 16.3%;
+	height: 49.5%;
 	display: inline-block;
 	float: left; 
 	margin-right: 2px;
@@ -393,7 +394,7 @@ a, a:visited, a:hover, a:active {
 	height: 100%;
 }
 .admin-image-list:hover {
-	background: #585858;
+	background: #444;
 }
 .admin-options {
 	float: left;
@@ -404,7 +405,7 @@ a, a:visited, a:hover, a:active {
 	
 }
 .admin-options:hover {
-	background: #555;
+	background: #444;
 }
 .admin-users {
 	float: left;
@@ -415,7 +416,7 @@ a, a:visited, a:hover, a:active {
 	font-family: 'Roboto', sans-serif; 	
 }
 .admin-users:hover {
-	background: #585858;
+	background: #444;
 }
 .admin-users a{
 	width: 100%;
@@ -464,4 +465,16 @@ a, a:visited, a:hover, a:active {
 .user-entry:hover{
 	cursor: pointer;
 	background: rgba(0,153,224, 0.8);
+}
+.client-head {
+	position: absolute;
+	top: 2px;
+	left: 45%;
+	text-align: center;
+	font-size: 22px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #f1f1f1;
+    line-height: 32px;
+    text-transform: uppercase;
 }

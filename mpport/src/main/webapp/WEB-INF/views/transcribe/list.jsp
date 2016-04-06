@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="shortcut icon" href="http://www.motionpoint.com/etc/images/ico/favicon.ico">
-<title>MP:Workbench</title>
+<title>MP: IMAGE BENCH</title>
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/ttapi.css" />">
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/loader.css" />">
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.min.js"></script>
@@ -27,8 +27,19 @@
 <div class="ft-wrapper">
 <div class="ft-top-nav">
 	<div class="ft-top-logo"></div>
-	<div class="title"> <a href="<c:url value="/" />"> IMAGEBENCH</a></div>
-	
+	<div class="title"> <a href="#"> IMAGE BENCH</a></div>
+	<div class="client-head">
+	<table>
+	<tr>
+	<td>
+		<img src="../resources/images/logos/${client.slug}.png" height="32">
+	</td>
+	<td>
+		${client.clientName}
+	</td>
+	</tr>
+	</table>
+</div>	
 			<div class="account-box">
 				<table><tr><td><img src="../resources/images/me.jpg" height="30" /></td><td>
 				<a href=""><font color="#0099e0"> Matthew</font></a><br>
@@ -38,7 +49,7 @@
 			</div>
 </div>
 
-<div data-ng-controller="ApiController" data-ng-init="init('${apiLocation}/api/ft/start/0/end/25')" class="ft-container">
+<div data-ng-controller="ApiController" data-ng-init="init('${client.apiLocation}/api/ft/start/0/end/25')" class="ft-container">
   <div ng-controller="FileController">
 	<div class="ft-work-box" ng-show="showEditor">
 		<div class="ft-work-image-box">
