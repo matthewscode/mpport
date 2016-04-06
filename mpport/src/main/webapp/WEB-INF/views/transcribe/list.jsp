@@ -76,7 +76,7 @@
 				<div class="ft-pad"></div>
 				<button type="button" class="ts-button" ng-click="submitTranscription('<c:url value="${client.apiLocation}/api/transcription/create/" />', transcriptionId, transcriptionText, checksumId); trans = true">TRANSCRIPTION <font color="#b2c9de">EN</font></button>
 				<div class="ft-pad"></div>
-				<div class="ft-word-count-box" ng-click="trans = true" ng-class="{'ft-green' : trans}">{{ transcriptionWordCount }} w</div>
+				<div class="ft-word-count-box" ng-class="{'ft-green' : trans == true}">{{ transcriptionWordCount }} w</div>
 			</div>
 		</div>
 		<div class="ft-detail-translation">
@@ -86,7 +86,7 @@
 				<div class="ft-pad"></div>
 				<button type="button" class="button-full" ng-click="submitTranslation('<c:url value="${client.apiLocation}/api/translation/create/" />', translationText, transcriptionId); tranl = true">TRANSLATION <font color="#b2c9de">ES</font></button>
 				<div class="ft-pad"></div>
-				<div class="ft-word-count-box"  ng-class="{'ft-green' : tranl}">{{ translationWordCount }} w</div>
+				<div class="ft-word-count-box"  ng-class="{'ft-green' : tranl == true}">{{ translationWordCount }} w</div>
 			</div>
 	  	</div>
 		</div>
@@ -108,7 +108,7 @@
 </div>
   <div data-ng-show="data" class="ft-list" ng-class="{'has-editor': showEditor}">
 
-  	<div data-ng-repeat="ft in data" class="ft-box" ng-click="trans = false; tranl = false;setEditor('<c:url value="${client.apiLocation}/api/ic/get/transription/translation/" />', ft.checksumId, ft.originUrl, ft);">
+  	<div data-ng-repeat="ft in data" class="ft-box" ng-click="setEditor('<c:url value="${client.apiLocation}/api/ic/get/transription/translation/" />', ft.checksumId, ft.originUrl, ft);">
 
   		<div class="ft-overlay"></div>
 
