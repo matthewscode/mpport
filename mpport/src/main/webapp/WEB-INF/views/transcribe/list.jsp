@@ -74,9 +74,9 @@
 			<div class="ft-button-wrapper">
 				<div class="ft-glossary-box">GLOSSARY</div>
 				<div class="ft-pad"></div>
-				<button type="button" class="ts-button" ng-click="submitTranscription('<c:url value="${client.apiLocation}/api/transcription/create/" />', transcriptionId, transcriptionText, checksumId)">TRANSCRIPTION <font color="#b2c9de">EN</font></button>
+				<button type="button" class="ts-button" ng-click="submitTranscription('<c:url value="${client.apiLocation}/api/transcription/create/" />', transcriptionId, transcriptionText, checksumId); trans = true">TRANSCRIPTION <font color="#b2c9de">EN</font></button>
 				<div class="ft-pad"></div>
-				<div class="ft-word-count-box">{{ transcriptionWordCount }} w</div>
+				<div class="ft-word-count-box" ng-click="trans = true" ng-class="{'ft-green' : trans}">{{ transcriptionWordCount }} w</div>
 			</div>
 		</div>
 		<div class="ft-detail-translation">
@@ -84,9 +84,9 @@
 			<div class="ft-button-wrapper">
 				<div class="ft-glossary-box">RULES</div>
 				<div class="ft-pad"></div>
-				<button type="button" class="button-full" ng-click="submitTranslation('<c:url value="${client.apiLocation}/api/translation/create/" />', translationText, transcriptionId)">TRANSLATION <font color="#b2c9de">ES</font></button>
+				<button type="button" class="button-full" ng-click="submitTranslation('<c:url value="${client.apiLocation}/api/translation/create/" />', translationText, transcriptionId); tranl = true">TRANSLATION <font color="#b2c9de">ES</font></button>
 				<div class="ft-pad"></div>
-				<div class="ft-word-count-box">{{ translationWordCount }} w</div>
+				<div class="ft-word-count-box"  ng-class="{'ft-green' : tranl}">{{ translationWordCount }} w</div>
 			</div>
 	  	</div>
 		</div>

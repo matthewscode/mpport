@@ -89,6 +89,22 @@ a, a:visited, a:hover, a:active {
 	font-size: 16px;
     font-family: 'Roboto', sans-serif;
 }
+
+.ft-green {
+	width: 18%;
+	height: 90%;
+	color: #f1f1f1;
+	border: 1px solid #000;
+	border-radius: 3px;
+	background: #45BF55;
+	text-align: center;
+	display: inline-block;
+	float: left;
+	padding: 0.80%;
+	cursor: cursor;
+	font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
 .ft-glossary-box{
 	width: 18%;
 	height: 90%;
