@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="shortcut icon" href="http://www.motionpoint.com/etc/images/ico/favicon.ico">
 <title>MP: EntryPoint</title>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.min.js"></script>
@@ -18,6 +19,7 @@
 <script src=<c:url value="/resources/js/port.js" />></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
+	
 </head>
 <body data-ng-app="portApp">
 	<div class="wrapper" data-ng-controller="portController"

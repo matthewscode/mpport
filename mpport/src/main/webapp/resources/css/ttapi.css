@@ -62,7 +62,7 @@ a, a:visited, a:hover, a:active {
 
 .ft-loading{
 	width: 100%;
-	height: 100%;
+	height: calc(100.00vh - 65px);
 	background: rgba(0,128,199, 0.7);
 	position: absolute;
 }
@@ -133,8 +133,8 @@ a, a:visited, a:hover, a:active {
 	overflow: auto;
 	padding: 5px;
 	height: calc(100.00vh - 65px);
-	-webkit-transition: width 0.2s, height 0.2s, background-color 0.2s, -webkit-transform 0.2s;
-    transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.2s;
+	-webkit-transition: width 0.0s, height 0.0s, background-color 0.0s, -webkit-transform 0.0s;
+    transition: width 0.0s, height 0.0s, background-color 0.0s, transform 0.0s;
 }
 .ft-list.has-editor {
 	height: 53.00vh;
@@ -433,6 +433,7 @@ a, a:visited, a:hover, a:active {
 	font-weight: 500;
 	font-family: 'Roboto', sans-serif; 
 	line-height: 220%;
+	border-radius: 3px;
 }
 .tstl:hover{
 	background: rgba(0,153,224, 0.8);
@@ -456,6 +457,7 @@ a, a:visited, a:hover, a:active {
 	width: 100%;
 	height: 26px;
 	line-height: 26px;
+	border-radius: 3px;
 }
 .user-entry:hover{
 	cursor: pointer;

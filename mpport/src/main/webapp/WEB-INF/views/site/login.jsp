@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="shortcut icon" href="http://www.motionpoint.com/etc/images/ico/favicon.ico">
 <title>Login MP:Workbench</title>
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css" />">
 </head>
