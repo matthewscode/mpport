@@ -74,7 +74,7 @@
 			<div class="ft-button-wrapper">
 				<div class="ft-glossary-box">GLOSSARY</div>
 				<div class="ft-pad"></div>
-				<button type="button" class="ts-button" ng-click="submitTranscription('<c:url value="${apiLocation}/api/transcription/create/" />', transcriptionId, transcriptionText, checksumId)">TRANSCRIPTION <font color="#b2c9de">EN</font></button>
+				<button type="button" class="ts-button" ng-click="submitTranscription('<c:url value="${client.apiLocation}/api/transcription/create/" />', transcriptionId, transcriptionText, checksumId)">TRANSCRIPTION <font color="#b2c9de">EN</font></button>
 				<div class="ft-pad"></div>
 				<div class="ft-word-count-box">{{ transcriptionWordCount }} w</div>
 			</div>
@@ -84,7 +84,7 @@
 			<div class="ft-button-wrapper">
 				<div class="ft-glossary-box">RULES</div>
 				<div class="ft-pad"></div>
-				<button type="button" class="button-full" ng-click="submitTranslation('<c:url value="${apiLocation}/api/translation/create/" />', translationText, transcriptionId)">TRANSLATION <font color="#b2c9de">ES</font></button>
+				<button type="button" class="button-full" ng-click="submitTranslation('<c:url value="${client.apiLocation}/api/translation/create/" />', translationText, transcriptionId)">TRANSLATION <font color="#b2c9de">ES</font></button>
 				<div class="ft-pad"></div>
 				<div class="ft-word-count-box">{{ translationWordCount }} w</div>
 			</div>
@@ -108,7 +108,7 @@
 </div>
   <div data-ng-show="data" class="ft-list" ng-class="{'has-editor': showEditor}">
 
-  	<div data-ng-repeat="ft in data" class="ft-box" ng-click="setEditor('<c:url value="${apiLocation}/api/ic/get/transription/translation/" />', ft.checksumId, ft.originUrl, ft)">
+  	<div data-ng-repeat="ft in data" class="ft-box" ng-click="setEditor('<c:url value="${client.apiLocation}/api/ic/get/transription/translation/" />', ft.checksumId, ft.originUrl, ft)">
 
   		<div class="ft-overlay"></div>
 
@@ -130,7 +130,7 @@
 <div class="ft-bottom" ng-class="{'ft-admin-menu' : showAdminMenu }">
 	<div class= "ft-bottom-top-bar">
 	<button ng-click="enableAdminMenu()" class="button-bottom"><i class="material-icons" style="font-size: 23px;">&#xE5C7;</i></button>
-	<button ng-click="loadMore('${apiLocation}', 25)" class="button-bottom"><i class="material-icons" style="font-size: 23px;">add_box</i></button>
+	<button ng-click="loadMore('${client.apiLocation}', 25)" class="button-bottom"><i class="material-icons" style="font-size: 23px;">add_box</i></button>
 	</div>
 	<div style="padding: 50px; text-align: center; color: #f8f8f8;font-size: 18px;font-weight: 200;font-family: 'Roboto', sans-serif;" ng-show="showAdminMenu && assignedImages.length == 0">Please Select Images for Assignment</div>
 	<div class="ft-bottom-bottom-bar" ng-show="showAdminMenu && assignedImages.length > 0">
