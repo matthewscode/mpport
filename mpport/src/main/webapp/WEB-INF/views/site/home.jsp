@@ -97,18 +97,9 @@
 							ng-class="{'active' : selectedTab == 'tesla'}"
 							ng-click="selectedTab = 'tesla'; switchClient('tesla')">
 							<div class="client-bar-box"
-								style="background-image: url(http://morrisontool.com/wordpress/wp-content/uploads/logo-tesla.png)">
+								style="background-image: url(<c:url value="/resources/images/logos/" />tesla.png)">
 							</div>
 							<div style="height: 20px">Tesla</div>
-						</div>
-					</div>
-					<div class="top-bar-box">
-						<div class="inactive" ng-class="{'active' : selectedTab == 'zen-pencils'}"
-							ng-click="selectedTab = 'zen-pencils'; switchClient('zen')">
-							<div class="client-bar-box"
-								style="background-image: url(<c:url value="/resources/images/logos/" />zen-pencils.png)">
-							</div>
-							<div style="height: 20px">Zen Pencils</div>
 						</div>
 					</div>
 					<div class="top-bar-box">
@@ -121,6 +112,16 @@
 							<div style="height: 20px">Mizuno Golf</div>
 						</div>
 					</div>
+					<div class="top-bar-box">
+						<div class="inactive" ng-class="{'active' : selectedTab == 'zen-pencils'}"
+							ng-click="selectedTab = 'zen-pencils'; switchClient('zen')">
+							<div class="client-bar-box"
+								style="background-image: url(<c:url value="/resources/images/logos/" />zen-pencils.png)">
+							</div>
+							<div style="height: 20px">Zen Pencils</div>
+						</div>
+					</div>
+					
 				</div>
 				<div class="top-account-bar">
 					<div class="account-box">
