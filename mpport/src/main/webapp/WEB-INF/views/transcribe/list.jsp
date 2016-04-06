@@ -29,17 +29,9 @@
 	<div class="ft-top-logo"></div>
 	<div class="title"> <a href="#"> IMAGE BENCH</a></div>
 	<div class="client-head">
-	<table>
-	<tr>
-	<td>
-		<img src="../resources/images/logos/${client.slug}.png" height="32">
-	</td>
-	<td>
-		${client.clientName}
-	</td>
-	</tr>
-	</table>
-</div>	
+		<div class="ft-top-logo" style="background-image: url(../resources/images/logos/${client.slug}.png)"></div>
+		<div class="title"> <a href="#"> ${client.clientName} </a></div>
+	</div>	
 			<div class="account-box">
 				<table><tr><td><img src="../resources/images/me.jpg" height="30" /></td><td>
 				<a href=""><font color="#0099e0"> Matthew</font></a><br>
