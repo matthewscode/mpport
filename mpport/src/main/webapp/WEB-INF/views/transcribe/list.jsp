@@ -144,12 +144,12 @@
 		<div class="admin-options" ng-init="tab=0">
 		<table width="100%" height="100%"><tr>
 		<td width="100%" height="45%" valign="center">
-		<div class="tstl" ng-show="assignedImages.length > 0" ng-click="tab = 1" ng-class="{'option-active': tab == 1}">TRANSCRIBE</div>
+		<div class="tstl" ng-show="assignedImages.length > 0" ng-click="tab1 = !tab1" ng-class="{'option-active': tab1}">TRANSCRIBE</div>
 		</td>
 		</tr>
 		<tr>
 		<td width="100%" height="45%" valign="center">
-		<div class="tstl" ng-show="assignedImages.length > 0" ng-click="tab = 2" ng-class="{'option-active': tab == 2}">TRANSLATE</div>
+		<div class="tstl" ng-show="assignedImages.length > 0" ng-click="tab2 = !tab2" ng-class="{'option-active': tab2}">TRANSLATE</div>
 		</td>
 		</tr>
 		<tr><td height="10%">&nbsp;</td></tr>

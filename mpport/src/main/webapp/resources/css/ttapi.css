@@ -131,10 +131,10 @@ a, a:visited, a:hover, a:active {
 
 .ft-list {
 	overflow: auto;
-	padding: 10px;
-	height: 93.00vh;
-		-webkit-transition: width 0.0s, height 0.0s, background-color 0.0s, -webkit-transform 0.0s;
-    transition: width 0.0s, height 0.0s, background-color 0.0s, transform 0.0s;
+	padding: 5px;
+	height: calc(100.00vh - 65px);
+	-webkit-transition: width 0.2s, height 0.2s, background-color 0.2s, -webkit-transform 0.2s;
+    transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.2s;
 }
 .ft-list.has-editor {
 	height: 53.00vh;
@@ -376,8 +376,8 @@ a, a:visited, a:hover, a:active {
 	max-height: 100%;
 }
 .admin-image-entry {
-	width: 10%;
-	height: 30%;
+	width: 15%;
+	height: 49%;
 	display: inline-block;
 	float: left; 
 	margin-right: 2px;
@@ -390,6 +390,9 @@ a, a:visited, a:hover, a:active {
 	width: 35%;
 	height: 100%;
 }
+.admin-image-list:hover {
+	background: #585858;
+}
 .admin-options {
 	float: left;
 	background: #585858;
@@ -398,6 +401,9 @@ a, a:visited, a:hover, a:active {
 	padding: 5px;
 	
 }
+.admin-options:hover {
+	background: #555;
+}
 .admin-users {
 	float: left;
 	background: #555;
@@ -405,6 +411,9 @@ a, a:visited, a:hover, a:active {
 	height: 100%;
 	color: #f8f8f8;
 	font-family: 'Roboto', sans-serif; 	
+}
+.admin-users:hover {
+	background: #585858;
 }
 .admin-users a{
 	width: 100%;
@@ -420,8 +429,8 @@ a, a:visited, a:hover, a:active {
 .tstl{
 	text-align: center;
 	color: #f8f8f8;
-	font-size: 22px;
-	font-weight: 600;
+	font-size: 18px;
+	font-weight: 500;
 	font-family: 'Roboto', sans-serif; 
 	line-height: 220%;
 }
