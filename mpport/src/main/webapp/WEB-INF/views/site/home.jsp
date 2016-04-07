@@ -23,18 +23,18 @@
 </head>
 <body data-ng-app="portApp">
 	<div class="wrapper" data-ng-controller="portController"
-		data-ng-init="init('<c:url value="/api/client/all" />')">
+		data-ng-init="init('<c:url value="/api/client/all" />'); expanded = false;">
 
 		<!--  navigation -->
-		<div class="main-nav">
-			<div class="logo">
+		<div class="main-nav" ng-class="{'main-nav-expanded' : expanded}">
+			<div class="logo" ng-click="expanded = !expanded">
 				<img src="<c:url value="/resources/css/mp.png" />" class="logo-img" /><a
 					href="" class="logo-text">ENTRYPOINT</a>
 			</div>
 			<div class="nav-entry-wrapper">
 				<div class="nav-entry">
 					<div class="box-entry-img">
-						<i class="material-icons" style="font-size: 36px; color: #6c8895;">translate</i>
+						<i class="material-icons" style="font-size: 36px;">translate</i>
 					</div>
 					<div class="app-entry-text">
 						TRANSLATION DESK
@@ -44,7 +44,7 @@
 				</div>
 				<div class="nav-entry">
 					<div class="box-entry-img">
-						<i class="material-icons" style="font-size: 36px; color: #cabba5;">insert_photo</i>
+						<a target="_blank" href="transcribe/{{ selectedTab}}"><i class="material-icons" style="font-size: 36px;">insert_photo</i></a>
 					</div>
 					<div class="app-entry-text">
 						<a target="_blank" href="transcribe/{{ selectedTab}}">IMAGE BENCH</a>
@@ -55,7 +55,7 @@
 				</div>
 				<div class="nav-entry" ng-show="clientName != 'Zen Pencils'">
 					<div class="box-entry-img">
-						<i class="material-icons" style="font-size: 36px; color: #d3dcbf">insert_chart</i>
+						<i class="material-icons" style="font-size: 36px;">insert_chart</i>
 					</div>
 					<div class="app-entry-text">
 						GLOBAL GROWTH
@@ -66,30 +66,22 @@
 				<div class="nav-entry"
 					ng-show="clientName != 'Zen Pencils' && clientName != 'Mizuno Golf'">
 					<div class="box-entry-img">
-						<i class="material-icons" style="font-size: 36px; color: #94aeac;">web</i>
+						<i class="material-icons" style="font-size: 36px;">web</i>
 					</div>
 					<div class="app-entry-text">PUBLIC GRAB</div>
 				</div>
 				<div class="nav-entry"
 					ng-show="clientName != 'Zen Pencils' && clientName != 'Mizuno Golf'">
 					<div class="box-entry-img">
-						<i class="material-icons" style="font-size: 36px; color: #544d56;">camera</i>
+						<i class="material-icons" style="font-size: 36px;">camera</i>
 					</div>
 					<div class="app-entry-text">CLIENT PORTAL</div>
-				</div>
-			</div>
-			<div class="nav-corporate">
-				<div class="selected-corporate">
-					<div class="icon-class">
-						<i class="material-icons md-18">copyright</i>
-					</div>
-					<div class="entry-word">MotionPoint</div>
 				</div>
 			</div>
 		</div>
 
 		<!-- main page -->
-		<div class="main-container">
+		<div class="main-container" ng-class="{'main-container-expanded' : expanded}">
 			<div class="top-bar">
 				<div class="top-top-bar" ng-init="selectedTab = 'tesla'">
 					<div class="top-bar-box">
@@ -99,7 +91,6 @@
 							<div class="client-bar-box"
 								style="background-image: url(<c:url value="/resources/images/logos/" />tesla.png)">
 							</div>
-							<div style="height: 20px">Tesla</div>
 						</div>
 					</div>
 					<div class="top-bar-box">
@@ -109,7 +100,6 @@
 							<div class="client-bar-box"
 								style="background-image: url(<c:url value="/resources/images/logos/" />mizuno-golf.png)">
 							</div>
-							<div style="height: 20px">Mizuno Golf</div>
 						</div>
 					</div>
 					<div class="top-bar-box">
@@ -118,7 +108,6 @@
 							<div class="client-bar-box"
 								style="background-image: url(<c:url value="/resources/images/logos/" />zen-pencils.png)">
 							</div>
-							<div style="height: 20px">Zen Pencils</div>
 						</div>
 					</div>
 					
@@ -128,7 +117,7 @@
 						<table>
 							<tr>
 								<td><img src="resources/images/me.jpg" height="50" /></td>
-								<td><a href=""><font color="#0099e0"> Matthew</font></a><br>
+								<td><a href=""><font color="#0099ff"> Matthew</font></a><br>
 									MotionPoint<br /> <a href="logout">Logout</a></td>
 							</tr>
 						</table>
@@ -139,13 +128,14 @@
 
 			<div class="performance-container">
 				<div class="logo-box">
-					<div class="box-head">{{ clientName }}</div>
 					<div class="misc-body"
-						style="background-image: url({{ clientLogo }});"></div>
+						style="background-image: url({{ clientLogo }});">
+						<div class="client-details" >{{ clientName }}</div>
+				</div>
 				</div>
 				<div class="apps-box">
 					<div class="box-head">Mission</div>
-					<div class="misc-body" ng-show="selectedTab == 'tesla'">Our
+					<div class="box-whead" ng-show="selectedTab == 'tesla'">Our
 						goal when we created Tesla a decade ago was the same as it is
 						today: to accelerate the advent of sustainable transport by
 						bringing compelling mass market electric cars to market as soon as
@@ -156,7 +146,7 @@
 						was going to be expensive no matter what it looked like, so we
 						decided to build a sports car, as that seemed like it had the best
 						chance of being competitive with its gasoline alternatives.</div>
-					<div class="misc-body" ng-show="selectedTab == 'zen-pencils'">I was
+					<div class="box-whead" ng-show="selectedTab == 'zen-pencils'">I was
 						working in the boring corporate graphic design industry for 8
 						years before finally quitting at the end of 2011 to pursue my
 						passion for illustration and cartooning. At my old job, when my
@@ -167,7 +157,7 @@
 						do. The idea of taking these inspiring quotes, combining them with
 						my love of drawing and sharing them with others led to the
 						creation of Zen Pencils.</div>
-					<div class="misc-body" ng-show="selectedTab == 'mizuno-golf'">Since
+					<div class="box-whead" ng-show="selectedTab == 'mizuno-golf'">Since
 						our founding, we have taken special pride and pleasure in being
 						able to participate in the exciting world of sports and providing
 						sports equipment of the highest quality. Each and every one of us
@@ -247,14 +237,15 @@
 
 				<div class="line-chart-box" ng-controller="LineCtrl">
 					<div class="box-head">Translation Index</div>
-					<div class="misc-body" style="padding: 5px;">
+					<div class="box-whead" style="padding: 5px;">
 						<canvas id="line" class="chart chart-line" chart-data="data"
 							chart-labels="labels" chart-legend="false" chart-series="series"
-							chart-click="onClick" height="100%"> </canvas>
+							chart-click="onClick" height="85%"> </canvas>
 					</div>
 				</div>
 
 			</div>
+		</div>
 		</div>
 </body>
 </html>
