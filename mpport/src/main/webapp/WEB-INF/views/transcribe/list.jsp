@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="shortcut icon" href="http://www.motionpoint.com/etc/images/ico/favicon.ico">
+<link rel="shortcut icon" href="../resources/css/mp.png">
 <title>MP: IMAGE BENCH</title>
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/ttapi.css" />">
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/loader.css" />">

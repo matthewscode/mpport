@@ -222,7 +222,7 @@ a, a:visited,  a:active {
 	display: inline-block;
 	float: left;
 	border-bottom: 1px solid #e1e1e1;
-	background: rgba(0,115,191,0.8);
+	background: rgba(0,115,191,1.0);
 }
 .top-account-bar{
 	display: inline-block;
@@ -231,7 +231,7 @@ a, a:visited,  a:active {
 	padding: 0px;
 	float: right;
 	padding: 5px;
-	background: rgba(0,115,191,0.8);
+	background: rgba(0,115,191,1.0);
 }
 .account-box{
 	margin-top: 4px;

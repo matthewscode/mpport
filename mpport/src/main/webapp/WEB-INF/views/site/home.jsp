@@ -5,8 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="shortcut icon" href="http://www.motionpoint.com/etc/images/ico/favicon.ico">
-<title>MP: EntryPoint</title>
+<link rel="shortcut icon" href="resources/css/mp.png">
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.min.js"></script>
 <script src="<c:url value="/resources/chart/Chart.min.js" />"></script>
@@ -192,7 +191,7 @@
 					</div>
 					<div class="box-entry">
 						<div class="box-entry-text">
-							<font color="#949FB1"><strong>Translation
+							<font color="#f05050"><strong>Translation
 									rejected for segment: {{ segThree }}</strong></font><br> <font size="1"
 								color="#d1d1d1">2-28-2016 10:59</font>
 						</div>
