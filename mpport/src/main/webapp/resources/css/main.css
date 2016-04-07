@@ -261,6 +261,7 @@ a, a:visited,  a:active {
 	height: 60px;
 	text-align: center;
 	font-size: 18px;
+	background: rgba(0,115,191,1.0);
 }
 .client-bar {
 	width: 80%;
