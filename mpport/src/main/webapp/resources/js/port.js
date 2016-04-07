@@ -76,24 +76,24 @@ portApp.controller('portController', ['$scope', '$http', function($scope, $http)
 			}
 		}
 		$scope.teslaData = [
+		            	    [55],
+		            	    [],
 		            	    [61, 59, 80, 81, 68, 69, 87],
-		            	    [],
-		            	    [],
 		            	    [55, 56, 58, 70, 60, 63, 70]
 		            	  ];
 		$scope.teslaDonut = [[85,11],[3351,29]];
 		$scope.zenDonut = [[22,1],[56,10]];
 		$scope.zenData = [
+		            	    [90],
+		            	    [],
 		            	    [89, 88, 93, 92, 93, 92, 93],
-		            	    [],
-		            	    [],
 		            	    [90, 89, 95, 93, 94, 93, 95]
 		            	  ];
 		$scope.mizunoDonut = [[10,0],[120,3]];
 		$scope.mizunoData = [
+			            	    [18],
+			            	    [],
 			            	    [17, 19, 25, 19, 17, 21, 22],
-			            	    [],
-			            	    [],
 			            	    [18, 18, 22, 22, 18, 18, 22]
 			            	  ];
 		$scope.clientData = $scope.teslaData;

@@ -50,9 +50,8 @@ public class HomeController {
 
 	@RequestMapping(value="/transcribe/{clientSlug}", method = RequestMethod.GET)
 	public String transcriptionPage (@PathVariable("clientSlug") String clientSlug, Model model) {
-//	    Client currentClient = h;
-	    model.addAttribute("apiLocation", homeService.getClientBySlug(clientSlug).getApiLocation());
-	    //model.addAttribute("userKey", homeService.getUserKey(currentClient).getKey());
+		Client client = homeService.getClientBySlug(clientSlug);
+	    model.addAttribute("client", client);
 	    return "transcribe/list";
 	}
 	
