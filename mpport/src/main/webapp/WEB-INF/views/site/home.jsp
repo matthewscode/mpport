@@ -177,7 +177,7 @@
 					<div class="box-entry">
 						<div class="box-entry-text">
 							Translation completed for image: {{ imageNum }} <br> <font
-								size="1" color="#d1d1d1">2-29-2016 16:31</font>
+								size="1" color="#d1d1d1">4-05-2016 16:31</font>
 						</div>
 
 					</div>
@@ -185,7 +185,7 @@
 
 						<div class="box-entry-text">
 							Transcription completed for image: {{ imageNum }}<br> <font
-								size="1" color="#d1d1d1">2-29-2016 16:29</font>
+								size="1" color="#d1d1d1">4-05-2016 16:29</font>
 						</div>
 
 					</div>
@@ -193,19 +193,19 @@
 						<div class="box-entry-text">
 							<font color="#f05050"><strong>Translation
 									rejected for segment: {{ segThree }}</strong></font><br> <font size="1"
-								color="#d1d1d1">2-28-2016 10:59</font>
+								color="#d1d1d1">4-04-2016 10:59</font>
 						</div>
 					</div>
 					<div class="box-entry">
 						<div class="box-entry-text">
 							Translation completed for segment: {{ segOne }}<br> <font
-								size="1" color="#d1d1d1">2-28-2016 11:12</font>
+								size="1" color="#d1d1d1">4-04-2016 11:12</font>
 						</div>
 					</div>
 					<div class="box-entry">
 						<div class="box-entry-text">
 							Translation completed for segment: {{ segTwo }}<br> <font
-								size="1" color="#d1d1d1">2-28-2016 11:03</font>
+								size="1" color="#d1d1d1">4-02-2016 11:03</font>
 						</div>
 					</div>
 

@@ -310,7 +310,7 @@ a, a:visited,  a:active {
 	width: 32%;
 	background: #fff;
 	border: 1px solid #e1e1e1;
-	border-top: 3px solid #7266ba;
+	border-top: 3px solid #27c24c;
 	border-radius: 5px;
 	float: left;
 	text-align: center;
@@ -330,7 +330,7 @@ a, a:visited,  a:active {
 	position: relative;
 	text-align: center;
 	  		border: 1px solid #e1e1e1;
-	border-top: 3px solid #0073bf;
+	border-top: 3px solid #3a3f51;
 	border-radius: 5px;
 	 -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -342,7 +342,7 @@ a, a:visited,  a:active {
 	padding: 10px;
 	position: absolute;
 	font-size: 32px;
-	background: rgba(0,115,191,0.8);
+	background: rgba(58,63,81,0.8);
 	height: 50px;
 	line-height: 32px;
 	width: 100%;
