@@ -278,7 +278,6 @@ a, a:visited,  a:active {
 	color: #333;
 	opacity: 1.0;
 	cursor: pointer;
-	background: #f8f8f8;
 }
 .active{
 	color: #333;
@@ -294,6 +293,7 @@ a, a:visited,  a:active {
   	background-size: cover;
   	background-position: center; 
   		display: inline-block;
+  	border-radius: 5px;
 }
 .performance-container {
 	height: calc(100% - 80px);

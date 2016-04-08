@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="shortcut icon" href="resources/css/mp.png">
+<title>ENTRYPOINT</title>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.min.js"></script>
 <script src="<c:url value="/resources/chart/Chart.min.js" />"></script>
