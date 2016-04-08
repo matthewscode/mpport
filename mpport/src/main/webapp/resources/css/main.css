@@ -104,7 +104,6 @@ a, a:visited,  a:active {
 
 .main-nav {
 	overflow: hidden;
-	position: absolute;
 	height: 100%;
 	width: 80px;
 	background: #333;
@@ -116,15 +115,13 @@ a, a:visited,  a:active {
 
 }
 .main-container{
-	min-width: calc(100%);
-	width: auto;
+	width: calc(100% - 80px);
 	height: 100%;
 	float: left;
 	background: #f1f1f1;
-	padding-left: 80px;
 }
 .main-container-expanded {
-	padding-left: 220px;
+	width: calc(100% - 220px);
 }
 
 .logo{
