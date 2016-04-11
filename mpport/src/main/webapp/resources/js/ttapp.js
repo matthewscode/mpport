@@ -25,8 +25,14 @@ ttApp.directive('ckEditor', [function () {
     };
 }])
 
-ttApp.controller('ApiController', ['$scope', '$http', function($scope, $http) {
+ttApp.controller('ApiController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+	var tokenUrl;
+	var host = $location.host();
+	host = location.host;
+	var protocol = $location.protocol();
+	host = protocol + '://' +  host;
 	$scope.loading = true;
+	$scope.token;
 	var processData = function(data) {
 		// Sort
 		if($scope.options.sort && data) {
@@ -37,18 +43,31 @@ ttApp.controller('ApiController', ['$scope', '$http', function($scope, $http) {
 		}		
 		return data;
 	};
+	$scope.getToken = function(callback){
+		$http.get(host + $scope.tokenUrl)
+		.success(function(data, status, headers, config) {
+				if(typeof callback === 'function'){
+					callback(data.token);
+				}
+				return data.token;
+		    }) .error(function(data, status, headers, config) {
+		    	console.log('woops error');
+		    });
+	}
 		
-	$scope.init = function(url, options) {
+	$scope.init = function(url, tokenUrl, options) {
 		if(!url) {
 			return;
 		}
+		$scope.tokenUrl = tokenUrl;
 		$scope.dataUrl = url;
-		
 		$scope.options = options || {};
 		$scope.options.start = $scope.options.start || 0;
 		$scope.options.amount = $scope.options.amount || 50;
-		
-		$http.get(url)
+		var initializeData = function(token){
+			var initToken = '?token=' + token;
+			console.log('url to get to ' + url + initToken);
+		$http.get(url + initToken)
 			.success(function(data, status, headers, config) {
 				$scope.loading = false;
 				$scope.data = processData(data);
@@ -60,6 +79,9 @@ ttApp.controller('ApiController', ['$scope', '$http', function($scope, $http) {
 		    .error(function(data, status, headers, config) {
 		    	$scope.data = {error: true};
 		    });
+		}
+		$scope.getToken(initializeData);
+		
 	};
 	
 	$scope.loadMore = function(url, increment) {
@@ -73,15 +95,19 @@ ttApp.controller('ApiController', ['$scope', '$http', function($scope, $http) {
 		url = url +  '/api/ft/start/' +$scope.nextStart + '/end/' + $scope.nextEnd;
 		$scope.nextStart = $scope.nextEnd + 1;
 		$scope.nextEnd = $scope.nextStart + $scope.increment;
-		$http.get(url)
+		
+		var loadMoreResults = function(token){
+			var loadMoreToken = '?token=' + token;
+		$http.get(url + loadMoreToken)
 			.success(function(data, status, headers, config) {
 				$scope.data = $scope.data.concat(processData(data));
 				$scope.options.start += $scope.options.amount;
 			})
 		    .error(function(data, status, headers, config) {
-	    		 console.log('lol u errored')
+	    		 console.log('errored')
 		    });
-		
+		}
+		$scope.getToken(loadMoreResults);
 	};
 	
 }]);
@@ -108,51 +134,55 @@ ttApp.controller('FileController', ['$scope', '$http', function($scope, $http) {
 		$scope.editorLoading = true;
 		$scope.currentFile = model;
 		var fullUrl = url + checksumId;
-		$http.get(fullUrl).success(function(data, status, headers, config) {
-			$scope.editorLoading = false;
-			$scope.imgUrl = imgUrl;
-			$scope.checksumId = data.checksumId;
-			$scope.transcriptionId = data.transcriptionId;
-			$scope.transcriptionText = data.transcriptionText;
-			$scope.transcriptionWordCount = data.transcriptionWordCount;
-			$scope.translationId = data.translationId;
-			$scope.translationText = data.translationText;
-			$scope.translationWordCount = data.translationWordCount;
-			console.log('yay');
-			console.log(data);
-		})
-		 .error(function(data, status, headers, config) {
-    		 console.log('lol u errored')
-	    });
+		
+		var populateEditor = function(token){
+			var editorToken = '?token=' + token;
+			$http.get(fullUrl + editorToken).success(function(data, status, headers, config) {
+				$scope.editorLoading = false;
+				$scope.imgUrl = imgUrl;
+				$scope.checksumId = data.checksumId;
+				$scope.transcriptionId = data.transcriptionId;
+				$scope.transcriptionText = data.transcriptionText;
+				$scope.transcriptionWordCount = data.transcriptionWordCount;
+				$scope.translationId = data.translationId;
+				$scope.translationText = data.translationText;
+				$scope.translationWordCount = data.translationWordCount;
+			})
+			 .error(function(data, status, headers, config) {
+	    		 console.log('lol u errored')
+		    });
 		}
+		$scope.getToken(populateEditor);
 	}
 	$scope.submitTranscription = function(url, transcriptionId, text, cid){
 		$scope.dataUrl = url;
-		
 		$scope.options = {};
-		console.log('test: ' +cid);
 		var data = {
 				id: transcriptionId,
 				imageChecksum: {id: cid},
 				transcriptionText: text
 		};
-		$http.post(url, data)
-		.success(function(data, status, headers, config) {
-			$scope.currentFile.hasTranscription = true;
-			$scope.checksumId = data.checksumId;
-			$scope.transcriptionId = data.transcriptionId;
-			$scope.transcriptionText = data.transcriptionText;
-			$scope.transcriptionWordCount = data.transcriptionWordCount;
-			console.log($scope.data);
-			if(data.imageTranslationList != null && data.imageTranslationList[0].translationText > 0){
-				$scope.translationId = data.imageTranslationList[0].id;
-				$scope.translationText = data.imageTranslationList[0].translationText;
-				$scope.translationNoWords = data.imageTranslationList[0].translationNoWords;
+		var postTranscription = function(token){
+			var fullToken = '?token=' + token;
+			$http.post(url + fullToken, data)
+			.success(function(data, status, headers, config) {
+				$scope.currentFile.hasTranscription = true;
+				$scope.checksumId = data.checksumId;
+				$scope.transcriptionId = data.transcriptionId;
+				$scope.transcriptionText = data.transcriptionText;
+				$scope.transcriptionWordCount = data.transcriptionWordCount;
+				if(data.imageTranslationList != null && data.imageTranslationList[0].translationText > 0){
+					$scope.translationId = data.imageTranslationList[0].id;
+					$scope.translationText = data.imageTranslationList[0].translationText;
+					$scope.translationNoWords = data.imageTranslationList[0].translationNoWords;
+				}
+			})
+		    .error(function(data, status, headers, config) {
+	    		 console.log('lol u errored')
+		    });
 			}
-		})
-	    .error(function(data, status, headers, config) {
-    		 console.log('lol u errored')
-	    });
+		}
+		$scope.getToken(postTranscription);
 	}
 	$scope.submitTranslation = function(url, text, tid){
 		var data = {
@@ -172,7 +202,6 @@ ttApp.controller('FileController', ['$scope', '$http', function($scope, $http) {
 	}
 	
 	$scope.enableAdminMenu = function(){
-		console.log('trying');
 		$scope.showAdminMenu = !$scope.showAdminMenu;
 	}
 	

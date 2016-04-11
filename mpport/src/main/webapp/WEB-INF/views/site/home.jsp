@@ -220,8 +220,8 @@
 						<canvas id="doughnut" class="chart chart-doughnut"
 							chart-data="data" chart-labels="labels"></canvas>
 						<div class="chart-data">
-							<font color="#4D5360">Completed: {{ data[0] }}</font><br/><font
-								color="#949FB1">Returned: {{ data[1] }}</font>
+							<font color="#27c24c">Completed: {{ data[0] }}</font> <br/><font
+								color="#f05050">Returned: {{ data[1] }}</font>
 						</div>
 					</div>
 					<div class="box-foot">

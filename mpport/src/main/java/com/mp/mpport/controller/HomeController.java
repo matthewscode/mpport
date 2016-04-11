@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mp.mpport.domain.Client;
+import com.mp.mpport.security.TokenService;
 import com.mp.mpport.service.HomeService;
 
 
@@ -29,9 +30,19 @@ public class HomeController {
 	
 	@Autowired
 	private HomeService homeService;
+	@Autowired 
+	private TokenService tokenService;
  
 	@RequestMapping("/")
     public String list() {
+		try {
+			String keystring = tokenService.encrypt();
+			System.out.println(keystring);
+			System.out.println(tokenService.decrypt(keystring));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return "site/home";
     }
 	@RequestMapping("/login")
@@ -59,5 +70,11 @@ public class HomeController {
 	@RequestMapping("/api/client/all")
 	private List<Client> showClients(){
 		return homeService.getUserClientList();
+	}
+	
+	@ResponseBody
+	@RequestMapping("/api/get/token")
+	private String getToken() throws Exception{
+		return (tokenService.encrypt());
 	}
 }

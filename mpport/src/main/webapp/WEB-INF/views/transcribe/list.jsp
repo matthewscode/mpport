@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,6 +25,8 @@
 
 </head>
 <body data-ng-app="ttApp">
+<spring:url value="/api/get/token" var="tokenUrl" />
+
 <div class="ft-wrapper">
 <div class="ft-top-nav">
 	<div class="ft-top-logo"></div>
@@ -41,7 +44,7 @@
 			</div>
 </div>
 
-<div data-ng-controller="ApiController" data-ng-init="init('${client.apiLocation}/api/ft/start/0/end/25')" class="ft-container">
+<div data-ng-controller="ApiController" data-ng-init="init('${client.apiLocation}/api/ft/start/0/end/25', '${tokenUrl}')" class="ft-container">
   <div ng-controller="FileController">
 	<div class="ft-work-box" ng-show="showEditor">
 		<div class="ft-work-image-box">
@@ -163,8 +166,8 @@
 		<table height="100%" width="100%">
 		<tr>
 			<td>
-			<div class="user-entry" ng-click="user = 1" ng-class="{'option-active': user == 1}">Enrique Transcend</div>
-			<div class="user-entry" ng-click="user = 2" ng-class="{'option-active': user == 2}">Eugena Aperture</div>
+			<div class="user-entry" ng-click="user = 1" ng-class="{'option-active': user == 1}">Enrique Traveler</div>
+			<div class="user-entry" ng-click="user = 2" ng-class="{'option-active': user == 2}">Eugene Aperture</div>
 			<div class="user-entry" ng-click="user = 3" ng-class="{'option-active': user == 3}">Meena Resonance</div>
 			<div class="user-entry" ng-click="user = 4" ng-class="{'option-active': user == 4}">Manuel Jetstream</div>
 			<div class="user-entry" ng-click="user = 5" ng-class="{'option-active': user == 5}">Valerie Solar</div>
