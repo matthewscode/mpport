@@ -189,7 +189,9 @@ ttApp.controller('FileController', ['$scope', '$http', function($scope, $http) {
 				imageTranscription: {id: tid},
 				translationText: text
 		};
-		$http.post(url, data)
+	var postTranslation = function(token) {
+		var fullToken = '?token=' + token;
+		$http.post(url + fullToken, data)
 		.success(function(data, status, headers, config) {
 			$scope.currentFile.hasTranslation= true;
 			$scope.translationId = data.translationId;
@@ -199,6 +201,9 @@ ttApp.controller('FileController', ['$scope', '$http', function($scope, $http) {
 	    .error(function(data, status, headers, config) {
     		 console.log('lol u errored')
 	    });
+		}
+		$scope.getToken(postTranslation);
+		
 	}
 	
 	$scope.enableAdminMenu = function(){
