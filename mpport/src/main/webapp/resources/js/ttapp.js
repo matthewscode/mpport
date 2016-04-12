@@ -154,6 +154,7 @@ ttApp.controller('FileController', ['$scope', '$http', function($scope, $http) {
 		}
 		$scope.getToken(populateEditor);
 	}
+	}
 	$scope.submitTranscription = function(url, transcriptionId, text, cid){
 		$scope.dataUrl = url;
 		$scope.options = {};
@@ -180,7 +181,6 @@ ttApp.controller('FileController', ['$scope', '$http', function($scope, $http) {
 		    .error(function(data, status, headers, config) {
 	    		 console.log('lol u errored')
 		    });
-			}
 		}
 		$scope.getToken(postTranscription);
 	}
