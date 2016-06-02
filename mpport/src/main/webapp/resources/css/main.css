@@ -168,11 +168,29 @@ a, a:visited,  a:active {
 	font-size: 14px;
     font-weight: 600;
 	line-height: 50px;
-	color: #f7f9fa;
+	color: #888;
 	-webkit-font-smoothing: antialiased;
 	font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
 }
 .nav-entry:hover {
+	color: rgb(0,115,191);
+	cursor: pointer;
+}
+.image-bench {
+	text-transform: uppercase;
+	width: 220px;
+	height: 80px;
+	text-align: left;
+	float: left;
+	font-size: 14px;
+    font-weight: 600;
+	line-height: 50px;
+	color: #f7f9fa1;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+
+}
+.image-bench:hover {
 	color: rgb(0,115,191);
 	cursor: pointer;
 }

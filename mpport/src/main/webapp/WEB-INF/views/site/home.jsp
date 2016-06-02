@@ -23,10 +23,10 @@
 </head>
 <body data-ng-app="portApp">
 	<div class="wrapper" data-ng-controller="portController"
-		data-ng-init="init('<c:url value="/api/client/all" />'); expanded = false;">
+		data-ng-init="init('<c:url value="/api/client/all" />');">
 
 		<!--  navigation -->
-		<div class="main-nav" ng-class="{'main-nav-expanded' : expanded}">
+		<div class="main-nav" ng-class="{'main-nav-expanded' : expanded}" ng-mouseover="expanded = true;" ng-mouseleave="expanded = false;">
 			<div class="logo" ng-click="expanded = !expanded">
 				<img src="<c:url value="/resources/css/mp.png" />" class="logo-img" /><a
 					href="" class="logo-text">ENTRYPOINT</a>
@@ -42,7 +42,7 @@
 							ng-show="clientName != 'Zen Pencils'"></div>
 					</div>
 				</div>
-				<div class="nav-entry">
+				<div class="nav-entry"  style="color: #fff;">
 					<div class="box-entry-img">
 						<a target="_blank" href="transcribe/{{ selectedTab}}"><i class="material-icons" style="font-size: 36px;">insert_photo</i></a>
 					</div>
